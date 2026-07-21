@@ -16,7 +16,7 @@
   <meta name="twitter:title" content="Портфолио проектов — Эклет Инжиниринг">
   <meta name="twitter:description" content="100+ реализованных объектов. Склады, заводы, агропромышленные комплексы, гостиницы. Смотрите наши работы.">
   <link rel="canonical" href="https://eng.ecklet.ru/projects.html">
-  <style>
+<style>
 :root{--accent:#0F2741;--accent-hov:#091D31;--accent-muted:#2868B0;--surface:#F4F7FA;--surface-2:#E8EDF5;--white:#FFFFFF;--dark:#0D1C30;--dark-2:#091828;--text:#0D1C2E;--text-2:rgba(13,28,46,.65);--text-3:rgba(13,28,46,.42);--text-inv:#fff;--border:rgba(13,28,46,.10);}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Circe',sans-serif;color:var(--text);background:var(--surface);overflow-x:hidden;line-height:1.6;}
@@ -1177,8 +1177,6 @@ nav.scrolled ~ .nav-overlay { }
 </footer>
 <script src="js/app.js"></script>
 <script src="schema.js"></script>
-</body>
-</html>
 <script>
 const projectsData = [
   {
@@ -1503,14 +1501,6 @@ function initContainer() {
   });
 }
 
-/* ── NAVBAR ────────────────────────────────────── */
-const navbar = document.getElementById('navbar');
-if (navbar) {
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  }, { passive: true });
-}
-
 /* ── MOBILE STICKY ─────────────────────────────── */
 const stickyBar = document.getElementById('mobileSticky');
 if (stickyBar) {
@@ -1518,22 +1508,6 @@ if (stickyBar) {
     stickyBar.classList.toggle('show', window.scrollY > 400);
   }, { passive: true });
 }
-
-/* ── MOBILE NAV ────────────────────────────────── */
-const burgerBtn = document.getElementById('burgerBtn');
-const closeNavBtn = document.getElementById('closeNav');
-const mobileNavEl = document.getElementById('mobileNav');
-if (burgerBtn) {
-  burgerBtn.addEventListener('click', () => {
-    mobileNavEl.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
-}
-function closeMobileNav() {
-  if (mobileNavEl) mobileNavEl.classList.remove('open');
-  document.body.style.overflow = '';
-}
-if (closeNavBtn) closeNavBtn.addEventListener('click', closeMobileNav);
 
 /* ── BOOTSTRAP ─────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -1545,229 +1519,5 @@ document.addEventListener('DOMContentLoaded', () => {
   applyFilters();
 });
 </script>
-<script>
-// ── MEGA-NAV ──────────────────────────────────────────────────────────────
-(function(){
-  const ITEMS = [
-    {itemId:'ni-services', btnId:'nt-services'},
-    {itemId:'ni-industries', btnId:'nt-industries'},
-    {itemId:'ni-about',    btnId:'nt-about'},
-  ];
-  const overlay = document.getElementById('navOverlay');
-
-  function openMega(itemId, btnId) {
-    ITEMS.forEach(({itemId:id, btnId:bid}) => {
-      if (id !== itemId) {
-        document.getElementById(id)?.classList.remove('open');
-        const b = document.getElementById(bid);
-        if (b) b.setAttribute('aria-expanded','false');
-      }
-    });
-    const item = document.getElementById(itemId);
-    const btn  = document.getElementById(btnId);
-    item?.classList.add('open');
-    if (btn) btn.setAttribute('aria-expanded','true');
-    if (overlay) overlay.classList.add('visible');
-  }
-
-  function closeAll() {
-    ITEMS.forEach(({itemId, btnId}) => {
-      document.getElementById(itemId)?.classList.remove('open');
-      const b = document.getElementById(btnId);
-      if (b) b.setAttribute('aria-expanded','false');
-    });
-    if (overlay) overlay.classList.remove('visible');
-  }
-
-  ITEMS.forEach(({itemId, btnId}) => {
-    const btn = document.getElementById(btnId);
-    if (!btn) return;
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      const item = document.getElementById(itemId);
-      const isOpen = item?.classList.contains('open');
-      if (isOpen) closeAll();
-      else openMega(itemId, btnId);
-    });
-  });
-
-  // Click outside
-  document.addEventListener('click', closeAll);
-  // Escape
-  document.addEventListener('keydown', e => { if(e.key==='Escape') closeAll(); });
-  // Overlay click
-  if (overlay) overlay.addEventListener('click', closeAll);
-  // Prevent close when clicking inside mega panel
-  document.querySelectorAll('.nav-mega').forEach(m => {
-    m.addEventListener('click', e => e.stopPropagation());
-  });
-})();
-</script>
-<script>
-
-/* ═══════════════════════════════════════════════════════════
-   Ecklet Engineering — Telegram Form Handler
-   Заменить значения:
-     TELEGRAM_BOT_TOKEN → токен от @BotFather
-     TELEGRAM_CHAT_ID   → chat id куда слать заявки
-   ═══════════════════════════════════════════════════════════ */
-
-const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN';
-const TELEGRAM_CHAT_ID   = 'YOUR_CHAT_ID';
-
-async function sendToTelegram(data) {
-  const lines = [];
-  lines.push('📋 *Новая заявка с сайта Эклет Инжиниринг*');
-  lines.push('━━━━━━━━━━━━━━━━━━━━━━━━');
-  for (const [key, val] of Object.entries(data)) {
-    if (!val || key === 'bot-field' || key === 'form-name') continue;
-    const label = {
-      name:    '👤 Имя',
-      phone:   '📞 Телефон',
-      email:   '📧 Email',
-      message: '💬 Сообщение',
-      service: '🔧 Услуга',
-      industry:'🏭 Отрасль',
-      object:  '🏗 Объект',
-    }[key] || key;
-    lines.push(`${label}: ${val}`);
-  }
-  lines.push('━━━━━━━━━━━━━━━━━━━━━━━━');
-  lines.push(`🌐 Источник: ${window.location.href}`);
-  lines.push(`⏰ ${new Date().toLocaleString('ru-RU', {timeZone:'Asia/Novosibirsk'})}`);
-
-  const text = lines.join('\n');
-
-  // РЕЖИМ ИМИТАЦИИ — если токен не задан
-  if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN') {
-    console.log('[TG MOCK] Отправка в Telegram:\n', text);
-    await new Promise(r => setTimeout(r, 800)); // имитация задержки сети
-    return { ok: true, mock: true };
-  }
-
-  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id:    TELEGRAM_CHAT_ID,
-      text:       text,
-      parse_mode: 'Markdown',
-    }),
-  });
-  return response.json();
-}
-
-/* ── Универсальный обработчик форм ── */
-async function handleEckletForm(e, formEl) {
-  e.preventDefault();
-  const btn = formEl.querySelector('[type=submit]');
-  const successEl = formEl.closest('section')?.querySelector('.form-success');
-
-  // Состояние загрузки
-  if (btn) {
-    btn.disabled = true;
-    btn.dataset.origText = btn.textContent;
-    btn.textContent = 'Отправляем…';
-  }
-
-  // Собираем данные
-  const data = {};
-  new FormData(formEl).forEach((val, key) => { data[key] = val.trim(); });
-
-  try {
-    const result = await sendToTelegram(data);
-    if (result.ok) {
-      // Успех
-      formEl.style.display = 'none';
-      if (successEl) {
-        successEl.style.display = 'flex';
-      } else {
-        // Fallback inline
-        const msg = document.createElement('div');
-        msg.className = 'form-success-inline';
-        msg.innerHTML = `
-          <div class="fsi-icon">✓</div>
-          <div class="fsi-title">Заявка принята${result.mock ? ' (тест)' : ''}</div>
-          <div class="fsi-text">Свяжемся с вами в течение 1 рабочего дня.</div>`;
-        formEl.parentNode.insertBefore(msg, formEl.nextSibling);
-      }
-    } else {
-      throw new Error(result.description || 'Ошибка API');
-    }
-  } catch (err) {
-    console.error('[TG]', err);
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = btn.dataset.origText;
-    }
-    // Показываем ошибку
-    const errEl = formEl.querySelector('.form-error') || (() => {
-      const el = document.createElement('p');
-      el.className = 'form-error';
-      el.style.cssText = 'color:#e53e3e;font-size:14px;margin-top:8px;';
-      formEl.appendChild(el);
-      return el;
-    })();
-    errEl.textContent = 'Не удалось отправить. Позвоните нам: +7 (383) 375-01-30';
-  }
-}
-
-/* ── CSS для inline success ── */
-(function injectFormCSS() {
-  const s = document.createElement('style');
-  s.textContent = `
-    .form-success-inline{
-      display:flex;flex-direction:column;align-items:center;
-      text-align:center;padding:32px 24px;
-      background:var(--surface,#F4F7FA);
-      border:1px solid rgba(13,28,46,.08);
-      border-radius:2px;margin-top:8px;
-    }
-    .fsi-icon{
-      width:48px;height:48px;border-radius:50%;
-      background:var(--accent,#0F2741);color:#fff;
-      display:flex;align-items:center;justify-content:center;
-      font-size:22px;margin-bottom:12px;
-    }
-    .fsi-title{font-size:18px;font-weight:700;color:var(--accent,#0F2741);margin-bottom:6px;}
-    .fsi-text{font-size:15px;color:rgba(13,28,46,.6);line-height:1.55;}
-    .form-success{
-      display:none;flex-direction:column;align-items:center;
-      text-align:center;padding:32px 24px;
-    }
-  `;
-  document.head.appendChild(s);
-})();
-
-</script>
-  <script src="schema.js"></script>
-  <script>
-  (function(){
-    var map={
-      'services.html':'ni-services','service-complex.html':'ni-services',
-      'service-design.html':'ni-services','service-supply.html':'ni-services',
-      'service-construction.html':'ni-services',
-      'service-construction-engineering.html':'ni-services','bim.html':'ni-services',
-      'industry-apk.html':'ni-industries','industry-commercial.html':'ni-industries',
-      'industry-hotels.html':'ni-industries','industry-production.html':'ni-industries',
-      'industry-residential.html':'ni-industries','industry-warehouses.html':'ni-industries',
-      'industries.html':'ni-industries',
-      'projects.html':'ni-projects',
-      'blog.html':'ni-blog','blog-bim-for-client.html':'ni-blog',
-      'blog-capex-warehouse.html':'ni-blog','blog-expertise.html':'ni-blog',
-      'blog-industrial-floors.html':'ni-blog','blog-scan-to-bim.html':'ni-blog',
-      'process.html':'ni-about','about.html':'ni-about',
-      'geography.html':'ni-about','certs.html':'ni-about'
-    };
-    var page=window.location.pathname.split('/').pop()||'index.html';
-    var navId=map[page];
-    if(!navId)return;
-    var li=document.getElementById(navId);
-    if(!li)return;
-    var trigger=li.querySelector('a, button');
-    if(trigger)trigger.classList.add('nav-active');
-  })();
-  </script>
 </body>
 </html>
