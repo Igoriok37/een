@@ -1,0 +1,11 @@
+{
+  "name": "ecklet-engineering",
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "sass scss/style.scss style.css --style=compressed --source-map",
+    "watch:css": "sass scss/style.scss style.css --watch --style=compressed --source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

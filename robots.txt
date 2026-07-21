@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Не индексируем редирект-заглушку
+Disallow: /service-bim.html
+
+# Sitemap
+Sitemap: https://eng.ecklet.ru/sitemap.xml

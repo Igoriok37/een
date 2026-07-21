@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проекты — Эклет Инжиниринг</title>
+  <meta name="description" content="Реализованные проекты Эклет Инжиниринг: склады, производственные объекты, АПК, коммерческая недвижимость в России, Казахстане и Кыргызстане.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eng.ecklet.ru/projects.html">
+  <meta property="og:title" content="Портфолио проектов — Эклет Инжиниринг">
+  <meta property="og:description" content="100+ реализованных объектов. Склады, заводы, агропромышленные комплексы, гостиницы. Смотрите наши работы.">
+  <meta property="og:image" content="https://eng.ecklet.ru/og-projects.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Портфолио проектов — Эклет Инжиниринг">
+  <meta name="twitter:description" content="100+ реализованных объектов. Склады, заводы, агропромышленные комплексы, гостиницы. Смотрите наши работы.">
+  <link rel="canonical" href="https://eng.ecklet.ru/projects.html">
+:root{--accent:#0F2741;--accent-hov:#091D31;--accent-muted:#2868B0;--surface:#F4F7FA;--surface-2:#E8EDF5;--white:#FFFFFF;--dark:#0D1C30;--dark-2:#091828;--text:#0D1C2E;--text-2:rgba(13,28,46,.65);--text-3:rgba(13,28,46,.42);--text-inv:#fff;--border:rgba(13,28,46,.10);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Circe',sans-serif;color:var(--text);background:var(--surface);overflow-x:hidden;line-height:1.6;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;border-radius:2px;font-family:'Circe',sans-serif;font-size:16px;font-weight:700;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn--primary{background:var(--accent);color:#fff;}.btn--primary:hover{background:var(--accent-hov);transform:translateY(-1px);}
+.btn--outline-inv{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);}.btn--outline-inv:hover{background:rgba(255,255,255,.1);}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,72px);background:rgba(13,28,46,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);transition:background .3s,height .3s;}
+nav.scrolled{background:rgba(13,28,46,.95);height:58px;}
+.nav-logo-svg{height:26px;width:auto;}.nav-logo-svg path,.nav-logo-svg polygon{fill:#fff;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links>li>a,.nav-item>button{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;transition:color .2s;position:relative;background:none;border:none;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:5px;padding:0;}
+.nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;right:0;height:1px;background:#fff;transform:scaleX(0);transition:transform .2s;}
+.nav-links>li>a:hover,.nav-item>button:hover{color:#fff;}.nav-links>li>a:hover::after,.nav-item>button:hover::after,.nav-links>li>a.active::after{transform:scaleX(1);}
+.nav-links>li>a.active{color:#fff;}.nav-cta{background:var(--accent);color:#fff !important;padding:9px 22px;border-radius:2px;font-weight:700 !important;}.nav-cta::after{display:none !important;}.nav-cta:hover{background:var(--accent-hov) !important;}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:400;background:rgba(9,24,40,.97);padding:28px;flex-direction:column;}.mobile-nav.open{display:flex;}.mobile-nav-close{align-self:flex-end;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;margin-bottom:40px;}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px;}.mobile-nav ul a{font-size:24px;font-weight:700;color:#fff;text-decoration:none;}
+.eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-muted);margin-bottom:14px;}
+.eyebrow--inv{color:rgba(255,255,255,.45);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s,transform .65s;}.reveal.visible{opacity:1;transform:translateY(0);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* PAGE HERO */
+#page-hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;overflow:hidden;}
+.ph-photo{position:absolute;inset:0;background:url('metro-infra.jpg') center/cover no-repeat;}
+.ph-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,28,46,.88) 0%,rgba(13,28,46,.35) 70%,transparent 100%);}
+.ph-inner{position:relative;z-index:2;width:100%;padding:0 clamp(20px,5vw,80px) clamp(48px,6vw,72px);max-width:1280px;margin:0 auto;}
+.ph-breadcrumb{font-size:16px;color:rgba(255,255,255,.4);margin-bottom:16px;letter-spacing:.06em;}
+.ph-breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none;}
+.ph-breadcrumb span{margin:0 8px;}
+.ph-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.08;margin-bottom:14px;opacity:0;animation:fadeUp .8s .2s forwards;}
+.ph-desc{font-size:clamp(1rem,1.1vw,1.125rem);font-weight:400;color:rgba(255,255,255,.65);max-width:520px;line-height:1.55;opacity:0;animation:fadeUp .8s .38s forwards;}
+.ph-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);opacity:0;animation:fadeUp .8s .55s forwards;}
+.ph-stat-val{font-size:24px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:3px;}
+.ph-stat-label{font-size:11px;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.06em;}
+
+/* FILTERS — dropdown matrix */
+/* ── FILTER BAR ───────────────────────────────── */
+.filters-bar {
+  position: sticky;
+  top: 58px;
+  z-index: 200;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.filters-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px clamp(20px, 5vw, 80px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.fb-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  white-space: nowrap;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+/* ── DROPDOWN ─────────────────────────────────── */
+.dd-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.dd-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  white-space: nowrap;
+  transition: border-color .2s, background .2s;
+  min-width: 200px;
+  justify-content: space-between;
+}
+.dd-trigger:hover {
+  border-color: rgba(13, 28, 46, .3);
+  background: var(--surface);
+}
+.dd-trigger.open,
+.dd-trigger:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+.dd-trigger-text {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dd-trigger.active-filter .dd-trigger-text {
+  font-weight: 700;
+  color: var(--accent);
+}
+.dd-arrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s ease;
+}
+.dd-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-3);
+  fill: none;
+  stroke-width: 1.8;
+  transition: stroke .2s;
+}
+.dd-trigger.open .dd-arrow {
+  transform: rotate(180deg);
+}
+.dd-trigger.open .dd-arrow svg,
+.dd-trigger.active-filter .dd-arrow svg {
+  stroke: var(--accent);
+}
+.dd-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 100%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  z-index: 500;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(13, 28, 46, .1);
+}
+.dd-menu.open {
+  display: block;
+  animation: ddSlide .18s ease;
+}
+@keyframes ddSlide {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.dd-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background .15s;
+  border-left: 2px solid transparent;
+  white-space: nowrap;
+}
+.dd-option:hover { background: var(--surface); }
+.dd-option.selected {
+  font-weight: 700;
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--surface-2);
+}
+.dd-option + .dd-option { border-top: 1px solid var(--border); }
+.dd-check {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-left: auto;
+  opacity: 0;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 2;
+}
+.dd-option.selected .dd-check { opacity: 1; }
+
+/* ── SEARCH ───────────────────────────────────── */
+.search-wrap {
+  flex: 1;
+  min-width: 200px;
+  max-width: 340px;
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+.search-icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--text-3);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.search-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 36px 0 40px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s;
+}
+.search-input::placeholder { color: var(--text-3); }
+.search-input:focus { border-color: var(--accent); }
+.search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--text-3);
+  font-size: 18px;
+  line-height: 1;
+  transition: color .15s;
+}
+.search-clear:hover { color: var(--text); }
+.search-input:not(:placeholder-shown) ~ .search-clear { display: flex; }
+
+/* ── RESET BUTTON ─────────────────────────────── */
+.fb-reset {
+  height: 42px;
+  padding: 0 16px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--text-3);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .2s, border-color .2s;
+  display: none;
+  flex-shrink: 0;
+}
+.fb-reset:hover {
+  color: var(--accent);
+  border-color: var(--border);
+}
+.fb-reset.visible { display: block; }
+
+/* ── CARD ANIMATION ───────────────────────────── */
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.project-item.animate-in {
+  animation: cardFadeIn .38s ease both;
+}
+
+/* ── EMPTY STATE ──────────────────────────────── */
+.pi-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(64px, 10vw, 120px) 24px;
+  text-align: center;
+  width: 100%;
+}
+.pi-empty-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--text-3);
+}
+.pi-empty-title {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -.01em;
+}
+.pi-empty-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-2);
+  margin-bottom: 28px;
+}
+.pi-empty-reset {
+  height: 42px;
+  padding: 0 24px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.pi-empty-reset:hover {
+  background: var(--surface-2);
+  border-color: rgba(13, 28, 46, .25);
+}
+
+/* ── MOBILE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .filters-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .fb-label {
+    display: none; /* убираем лейбл «Фильтр» на мобильном — экономим место */
+  }
+  .dd-wrap {
+    width: 100%;
+    flex-shrink: 1;
+  }
+  .dd-trigger {
+    width: 100%;
+    min-width: 0;
+  }
+  .dd-menu {
+    left: 0;
+    right: 0;
+    min-width: 0;
+    width: 100%;
+  }
+  .search-wrap {
+    width: 100%;
+    max-width: none;
+    flex: none;
+  }
+  .fb-reset {
+    width: 100%;
+    text-align: center;
+    border-color: var(--border);
+    color: var(--text-2);
+  }
+  .fb-reset.visible { display: block; }
+}
+
+/* PROJECT LIST — чередование фото */
+.projects-list{background:var(--white);}
+.project-item{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--border);
+  text-decoration:none;color:inherit;
+  transition:background .2s;
+}
+.project-item:first-child{border-top:1px solid var(--border);}
+.project-item:hover{background:var(--surface-2);}
+.project-item:nth-child(even){direction:rtl;}
+.project-item:nth-child(even) > *{direction:ltr;}
+.pi-text{padding:clamp(36px,5vw,64px) clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;}
+.pi-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+.pi-tag{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(15,39,65,.2);border-radius:2px;padding:6px 12px;}
+.pi-tag.geo{color:var(--text-3);border-color:var(--border);}
+.pi-title{font-size:clamp(1.375rem,2.5vw,2rem);font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.1;margin-bottom:12px;transition:color .2s;}
+.project-item:hover .pi-title{color:var(--accent);}
+.pi-desc{font-size:16px;font-weight:400;color:var(--text-2);line-height:1.55;max-width:480px;margin-bottom:24px;}
+.pi-bottom{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.pi-deliv{font-size:16px;font-weight:400;color:var(--text-3);background:var(--surface-2);border-radius:2px;padding:8px 16px;}
+.pi-arrow{margin-left:auto;flex-shrink:0;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .25s;}
+.pi-arrow svg{color:var(--text-3);transition:color .2s;}
+.project-item:hover .pi-arrow{background:var(--accent);border-color:var(--accent);}
+.project-item:hover .pi-arrow svg{color:#fff;}
+.pi-image{position:relative;overflow:hidden;min-height:340px;}
+.pi-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;filter:brightness(.88);}
+.project-item:hover .pi-image img{transform:scale(1.04);filter:brightness(.95);}
+
+/* INLINE CTA */
+.inline-cta{background:var(--dark);padding:clamp(40px,5vw,64px) clamp(20px,5vw,80px);}
+.ic-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.ic-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:12px;}
+.ic-title{font-size:clamp(20px,2.5vw,30px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.01em;}
+.ic-sub{font-size:16px;font-weight:400;color:rgba(255,255,255,.55);margin-top:8px;}
+.ic-bullets{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;}
+.ic-bullet{font-size:16px;font-weight:400;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px;}
+.ic-bullet::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent-muted);flex-shrink:0;}
+.ic-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0;}
+.ic-phone{font-size:16px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}.ic-phone:hover{color:#fff;}
+
+/* GEO */
+.geo-section{padding:clamp(64px,8vw,100px) clamp(20px,5vw,80px);background:var(--surface-2);}
+.geo-inner{max-width:1200px;margin:0 auto;}
+.cities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:2px;background:var(--border);margin-top:40px;}
+.city-card{background:var(--white);padding:16px 18px;transition:background .2s;}
+.city-card:hover{background:var(--surface);}
+.city-name{font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.city-dots{display:flex;gap:4px;}
+.c-dot{width:7px;height:7px;border-radius:50%;}
+.geo-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;}
+.geo-leg-item{display:flex;align-items:center;gap:6px;font-size:16px;color:var(--text-2);}
+
+/* PAGE CTA */
+.page-cta{padding:clamp(72px,9vw,120px) clamp(20px,5vw,80px);background:var(--dark);text-align:center;}
+.pcta-inner{max-width:640px;margin:0 auto;}
+.pcta-title{font-size:clamp(1.625rem,3.5vw,3rem);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.06;margin-bottom:16px;}
+.pcta-desc{font-size:clamp(1rem,1.1vw,1.125rem);font-weight:400;color:rgba(255,255,255,.65);line-height:1.55;margin-bottom:36px;}
+.pcta-form{display:flex;gap:10px;max-width:420px;margin:0 auto 12px;}
+.pcta-input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:2px;padding:14px 16px;color:#fff;font-family:'Circe',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+.pcta-input:focus{border-color:rgba(255,255,255,.5);}
+.pcta-input::placeholder{color:rgba(255,255,255,.35);}
+.pcta-note{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);}
+
+/* FOOTER */
+footer{background:#091828;border-top:1px solid rgba(255,255,255,.07);padding:clamp(48px,6vw,80px) clamp(20px,5vw,80px) 28px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:clamp(28px,4vw,72px);margin-bottom:48px;}
+.footer-logo-svg{width:150px;height:auto;margin-bottom:16px;display:block;}.footer-logo-svg path,.footer-logo-svg polygon{fill:#fff;}
+.footer-brand p{font-size:16px;font-weight:400;color:rgba(255,255,255,.4);line-height:1.65;max-width:260px;}
+.footer-col h4{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.footer-col ul a{font-size:16px;font-weight:400;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;}.footer-col ul a:hover{color:#fff;}
+.footer-contact-item{margin-bottom:12px;}.footer-contact-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:2px;}
+.footer-contact-val{font-size:16px;font-weight:400;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s;display:block;}.footer-contact-val:hover{color:#fff;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);}
+.footer-copy,.footer-cities{font-size:14px;color:rgba(255,255,255,.28);}
+
+/* MOBILE STICKY BAR */
+.mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(13,28,46,.97);border-top:1px solid rgba(255,255,255,.08);padding:12px 20px;transform:translateY(100%);transition:transform .3s;}
+.mobile-sticky.show{transform:translateY(0);}
+.ms-inner{display:flex;gap:10px;}
+.ms-call{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;padding:14px;border-radius:2px;font-family:'Circe',sans-serif;font-weight:700;font-size:16px;text-decoration:none;}
+.ms-audit{flex:1;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);color:#fff;padding:14px;border-radius:2px;font-family:'Circe',sans-serif;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,.15);}
+
+@media(max-width:1024px){.project-item{grid-template-columns:1fr;}.project-item:nth-child(even){direction:ltr;}.pi-image{min-height:260px;order:-1;}.pi-text{padding:36px 28px;}.footer-top{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:768px){.nav-links{display:none;}.nav-burger{display:flex;}.ic-inner{flex-direction:column;align-items:flex-start;}.ic-actions{align-items:stretch;width:100%;}.pcta-form{flex-direction:column;}.footer-top{grid-template-columns:1fr;gap:24px;}.footer-bottom{flex-direction:column;gap:8px;text-align:center;}.mobile-sticky{display:block;}.page-cta{padding-bottom:80px;}}
+
+/* ── MEGA-NAV ─────────────────────────────────── */
+.nav-item{position:relative;list-style:none;}
+.nav-item>a,.nav-item>button{
+  color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:400;
+  letter-spacing:.02em;transition:color .2s;position:relative;cursor:pointer;
+  background:none;border:none;font-family:inherit;padding:0;display:flex;
+  align-items:center;gap:5px;
+}
+.nav-item>a::after,.nav-item>button::after{
+  content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;
+  background:#fff;transform:scaleX(0);transition:transform .2s;
+}
+.nav-item>a:hover,.nav-item>button:hover,
+.nav-item.open>a,.nav-item.open>button{color:#fff;}
+.nav-item>a:hover::after,.nav-item>button:hover::after,
+.nav-item.open>a::after,.nav-item.open>button::after{transform:scaleX(1);}
+.nav-item>a.active{color:#fff;}
+.nav-item>a.active::after{transform:scaleX(1);}
+
+.nav-chevron{
+  width:12px;height:12px;flex-shrink:0;
+  stroke:rgba(255,255,255,.6);fill:none;stroke-width:2;stroke-linecap:round;
+  transition:transform .3s ease,stroke .2s;
+}
+.nav-item.open .nav-chevron{transform:rotate(180deg);stroke:#fff;}
+
+/* Megamenu panel */
+.nav-mega{
+  display:none;
+  position:fixed;left:0;right:0;
+  top:68px;
+  background:#fff;
+  border-top:1px solid rgba(13,28,46,.08);
+  box-shadow:0 16px 48px rgba(13,28,46,.14);
+  z-index:250;
+  animation:megaSlide .22s ease;
+}
+nav.scrolled .nav-mega{top:58px;}
+@keyframes megaSlide{
+  from{opacity:0;transform:translateY(-8px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.nav-item.open .nav-mega{display:block;}
+
+.mega-inner{
+  max-width:1280px;margin:0 auto;
+  padding:48px clamp(20px,5vw,80px) 52px;
+  display:grid;grid-template-columns:320px 1fr;
+  gap:clamp(40px,5vw,80px);
+}
+
+/* Left column */
+.mega-intro{}
+.mega-label{
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-muted);margin-bottom:16px;display:block;
+}
+.mega-title{
+  font-size:clamp(1.375rem,2vw,1.75rem);font-weight:800;
+  color:var(--accent);letter-spacing:-.02em;line-height:1.1;margin-bottom:12px;
+}
+.mega-desc{
+  font-size:16px;font-weight:400;color:var(--text-2);
+  line-height:1.65;margin-bottom:28px;max-width:280px;
+}
+.mega-all{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:700;color:var(--accent);text-decoration:none;
+  letter-spacing:.04em;transition:gap .2s;
+}
+.mega-all:hover{gap:14px;}
+.mega-all svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2;}
+
+/* Right column — links grid */
+.mega-links{
+  display:flex;
+  flex-direction:column;
+}
+.mega-link{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;border-bottom:1px solid rgba(13,28,46,.07);
+  text-decoration:none;color:var(--text) !important;font-size:16px;font-weight:400;
+  transition:color .2s,padding-left .2s;
+}
+.mega-link:hover{color:var(--accent);padding-left:6px;}
+.mega-link-arrow{
+  width:14px;height:14px;stroke:var(--text-3);fill:none;stroke-width:2;
+  flex-shrink:0;transition:stroke .2s,transform .2s;
+}
+.mega-link:hover .mega-link-arrow{stroke:var(--accent);transform:translateX(3px);}
+
+/* Overlay */
+.nav-overlay{
+  display:none;position:fixed;inset:0;top:68px;z-index:240;
+  background:rgba(13,28,46,.25);
+}
+nav.scrolled~.nav-overlay{top:58px;}
+.nav-overlay.visible{display:block;}
+
+@media(max-width:1024px){
+  
+  .mega-intro{display:none;}
+  
+}
+@media(max-width:768px){
+  .nav-chevron{display:none;}
+  .nav-mega{display:none !important;}
+}
+
+/* ── MEGA-NAV FIXES ──────────────────────────── */
+/* Override nav-links a cascade into mega panel */
+.nav-mega a,
+.nav-mega a:hover,
+.nav-mega button {
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-mega a::after { display: none !important; }
+
+/* Fix mega-links grid gap */
+
+.mega-link:hover {
+  color: var(--accent) !important;
+  background: var(--surface);
+  padding-left: 18px;
+}
+.mega-link-arrow {
+  stroke: rgba(13,28,46,.3) !important;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+.mega-link:hover .mega-link-arrow {
+  stroke: var(--accent) !important;
+  transform: translateX(3px);
+}
+
+/* Fix mega intro text colors */
+.mega-title {
+  color: var(--accent) !important;
+}
+.mega-desc {
+  color: var(--text-2) !important;
+}
+.mega-label {
+  color: var(--accent-muted) !important;
+}
+.mega-all {
+  color: var(--accent) !important;
+}
+.mega-all svg {
+  stroke: var(--accent) !important;
+}
+
+/* Fix nav chevron — ensure it doesn't inherit white */
+.nav-chevron {
+  stroke: rgba(255,255,255,.6) !important;
+  pointer-events: none;
+}
+.nav-item.open .nav-chevron,
+.nav-item > button:hover .nav-chevron {
+  stroke: #fff !important;
+}
+
+/* Fix mega panel height - don't overflow */
+.nav-mega {
+  max-height: calc(100vh - 68px);
+  overflow-y: auto;
+}
+nav.scrolled + .nav-overlay,
+nav.scrolled ~ .nav-overlay { }
+
+/* Ensure mega-links text always visible */
+.mega-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.pi-result{
+  font-size:13px;font-weight:700;color:var(--accent-muted);
+  padding:8px 0 0;margin-top:4px;
+  border-top:1px solid var(--border);
+  grid-column:1/-1;
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><svg class="nav-logo-svg" viewBox="0 0 35765.84 7919.08" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="shape-rendering:geometricPrecision;fill-rule:evenodd;clip-rule:evenodd">
+      <path d="M8262.87 1105.82l2200.33 0 650.51 -848.51 -2850.84 0c-1447.68,0 -2506.34,842.11 -2506.34,2092.38 0.01,1243.79 1058.65,2174.85 2506.34,2174.85l2200.33 -0.03 650.51 -842.1 -2289.6 0c-1141.6,0 -2066.29,-286.98 -2066.29,-1288.05 0,-842.12 739.74,-1288.5 1505.05,-1288.54z"/>
+      <path d="M2905.66 1105.93l2200.26 0 650.51 -848.52 -2850.77 0c-1447.75,0 -2506.4,842.11 -2506.4,2092.38 0,1243.79 1058.65,2174.86 2506.37,2174.86l2200.29 -0.04 650.51 -842.1 -2289.58 0c-983.85,0 -1806.05,-213.5 -2014.62,-913.39l2377.2 -0.03 650.51 -848.09 -2989.33 0c219.32,-534.92 808.93,-815.04 1415.05,-815.07z"/>
+      <polygon points="18184.16,257.31 17182.92,257.31 17182.92,4524.51 20958.56,4524.51 21615.44,3682.41 18184.16,3682.41"/>
+      <polygon points="27624.9,257.31 26968.03,1105.82 29098.07,1105.82 29098.07,4524.51 30105.91,4524.51 30105.91,1105.82 31866.02,1105.82 32522.89,257.31"/>
+      <path d="M16641.2 257.31l-1071.73 0 -1275.16 1663.23 -1631.27 -0.08c0,-153.27 0,-385.38 0,-540.48l0 -1122.67 -1007.59 0 0 4267.2 1007.59 0 0 -1294.95c0,-182.03 0.01,-284.58 0.01,-460.5l1716.41 0 1198.68 1755.45 1071.74 0 -1563.83 -2239.3 1555.15 -2027.9z"/>
+      <path d="M24121.51 1105.82l2200.46 0 650.43 -848.51 -2850.89 0c-1447.77,0 -2506.34,842.11 -2506.34,2092.38 0.03,1243.79 1058.56,2174.85 2506.34,2174.85l2200.46 -0.03 650.43 -842.1 -2289.39 0c-984.22,0 -1806.08,-213.51 -2014.87,-913.39l2377.02 -0.04 650.87 -848.09 -2989.65 0c219.54,-534.92 808.95,-815.03 1415.13,-815.07z"/>
+      <polygon points="30308.36,5403.11 33615.57,1105.81 35365.11,1105.81 32057.9,5403.11 32057.9,5403.11"/>
+      <polygon points="26809.28,7676.4 28558.82,5403.11 30308.36,5403.11 28558.82,7676.4"/>
+      <path d="M11137.01 7649.87l0 -1547.72 917.59 0 0 331.65 -563.82 0 0 271.96 497.49 0 0 331.64 -497.49 0 0 280.82 585.94 0 0 331.65 -939.71 0zm2620.09 0l-283 0 -734.06 -928.63 0 928.63 -331.67 0 0 -1547.72 283.02 0 734.06 933.05 0 -933.05 331.65 0 0 1547.72zm1034.79 -550.55l0 -331.65 661.09 0 0 689.85c-66.33,66.33 -154.39,119.39 -264.21,159.19 -109.83,39.8 -214.85,59.69 -315.07,59.69 -260.91,0 -464.33,-72.22 -610.26,-216.67 -145.92,-144.45 -218.88,-339.03 -218.88,-583.72 0,-228.48 71.48,-418.99 214.47,-571.56 142.98,-152.55 333.13,-228.85 570.44,-228.85 201.93,0 370.73,53.82 506.33,161.42l-148.14 285.23c-30.96,-32.43 -76.27,-59.7 -135.99,-81.81 -59.69,-22.12 -119.76,-33.17 -180.2,-33.17 -134.12,0 -242.84,39.8 -326.11,119.39 -83.29,79.6 -124.94,196.06 -124.94,349.35 0,142.99 41.65,256.84 124.94,341.6 83.27,84.75 194.2,127.14 332.75,127.14 44.23,0 91.03,-8.48 140.4,-25.42 49.39,-16.97 83.65,-34.27 102.82,-51.98l0 -168.03 -329.44 0zm992.76 550.55l0 -1547.72 353.77 0 0 1547.72 -353.77 0zm2122.59 0l-283 0 -734.06 -928.63 0 928.63 -331.67 0 0 -1547.72 283.03 0 734.06 933.05 0 -933.05 331.64 0 0 1547.72zm398 0l0 -1547.72 917.59 0 0 331.65 -563.82 0 0 271.96 497.49 0 0 331.64 -497.49 0 0 280.82 585.94 0 0 331.65 -939.71 0zm1271.36 0l0 -1547.72 917.59 0 0 331.65 -563.83 0 0 271.96 497.5 0 0 331.64 -497.5 0 0 280.82 585.94 0 0 331.65 -939.7 0zm1625.12 0l-353.77 0 0 -1547.72c32.42,0 125.3,-0.74 278.59,-2.23 153.3,-1.46 235.85,-2.2 247.64,-2.2 200.47,0 346.02,44.23 436.68,132.66 90.65,88.45 135.98,209.31 135.98,362.61 0,210.8 -86.96,359.68 -260.9,446.64l451.05 610.24 -428.94 0 -375.88 -541.7 -130.45 0 0 541.7zm154.77 -1220.48c-5.89,0 -57.48,1.46 -154.77,4.41l0 342.72 128.25 0c160.67,0 240.99,-59.72 240.99,-179.1 0,-112.03 -71.48,-168.03 -214.47,-168.03zm1001.61 1220.48l0 -1547.72 353.76 0 0 1547.72 -353.76 0zm2122.59 0l-283 0 -734.06 -928.63 0 928.63 -331.67 0 0 -1547.72 283.02 0 734.06 933.05 0 -933.05 331.65 0 0 1547.72zm1034.79 -550.55l0 -331.65 661.09 0 0 689.85c-66.33,66.33 -154.39,119.39 -264.22,159.19 -109.82,39.8 -214.85,59.69 -315.06,59.69 -260.91,0 -464.33,-72.22 -610.26,-216.67 -145.92,-144.45 -218.88,-339.03 -218.88,-583.72 0,-228.48 71.48,-418.99 214.46,-571.56 142.99,-152.55 333.14,-228.85 570.44,-228.85 201.94,0 370.73,53.82 506.34,161.42l-148.14 285.23c-30.96,-32.43 -76.27,-59.7 -135.99,-81.81 -59.69,-22.12 -119.76,-33.17 -180.2,-33.17 -134.12,0 -242.84,39.8 -326.11,119.39 -83.3,79.6 -124.94,196.06 -124.94,349.35 0,142.99 41.64,256.84 124.94,341.6 83.27,84.75 194.19,127.14 332.75,127.14 44.23,0 91.03,-8.48 140.4,-25.42 49.38,-16.97 83.65,-34.27 102.82,-51.98l0 -168.03 -329.44 0z"/>
+    </svg></a>
+  <ul class="nav-links">
+    <!-- УСЛУГИ — megamenu -->
+    <li class="nav-item" id="ni-services">
+      <button aria-haspopup="true" aria-expanded="false" id="nt-services">
+        Услуги
+        <svg class="nav-chevron" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
+            <div class="nav-mega" id="nm-services">
+        <div class="mega-inner">
+          <div class="mega-intro">
+            <span class="mega-label">Что мы делаем</span>
+            <div class="mega-title">Комплексный инжиниринг полного цикла</div>
+            <p class="mega-desc">Проектирование, комплектация и строительство — от Pre-FEED до As-Built.</p>
+            <a href="services.html" class="mega-all">Все услуги<svg viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+          </div>
+          <div class="mega-links">
+            <a href="service-design.html" class="mega-link">Проектный инжиниринг полного цикла<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="service-construction-engineering.html" class="mega-link">Строительный инжиниринг<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="service-supply.html" class="mega-link">Комплектация объектов строительства<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="service-construction.html" class="mega-link">Строительные работы<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="bim.html" class="mega-link">BIM-компетенции<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="service-complex.html" class="mega-link">Комплексный инжиниринг<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item" id="ni-industries">
+      <button aria-haspopup="true" aria-expanded="false" id="nt-industries">
+        Отрасли<svg class="nav-chevron" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
+      <div class="nav-mega" id="nm-industries">
+        <div class="mega-inner">
+          <div class="mega-intro">
+            <span class="mega-label">Отрасли строительства</span>
+            <div class="mega-title">Инженерные решения для ключевых отраслей строительства</div>
+            <p class="mega-desc">Понимание специфики каждой отрасли позволяет учитывать эксплуатационные требования, особенности производства и монтажных процессов уже на стадии проектирования.</p>
+            <a href="industries.html" class="mega-all">Все отрасли<svg viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+          </div>
+          <div class="mega-links">
+            <a href="industry-warehouses.html" class="mega-link">Склады и логистика<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="industry-apk.html" class="mega-link">АПК и пищевая промышленность<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="industry-production.html" class="mega-link">Промышленное производство<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="industry-commercial.html" class="mega-link">Коммерческая недвижимость<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="industry-hotels.html" class="mega-link">Гостиницы и рекреация<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+            <a href="industry-residential.html" class="mega-link">Жилые объекты<svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item"><a href="projects.html" class="active" >Проекты</a></li>
+    <!-- О КОМПАНИИ — megamenu -->
+    <li class="nav-item"><a href="blog.html">Блог</a></li>
+    <li class="nav-item" id="ni-about">
+      <button aria-haspopup="true" aria-expanded="false" id="nt-about">
+        О компании
+        <svg class="nav-chevron" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
+      <div class="nav-mega" id="nm-about" role="region" aria-label="О компании">
+        <div class="mega-inner">
+          <div class="mega-intro">
+            <span class="mega-label">Эклет Инжиниринг</span>
+            <div class="mega-title">8 лет. 85+ инженеров. 3 страны</div>
+            <p class="mega-desc">Комплексный технический оператор в инвестиционно-строительных проектах. Часть Эклет Групп Рус.</p>
+            <a href="about.html" class="mega-all">
+              О компании
+              <svg viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+          </div>
+          <div class="mega-links">
+            <a href="about.html" class="mega-link">
+              О компании
+              <svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+            <a href="projects.html" class="mega-link">
+              Портфолио проектов
+              <svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+            <a href="process.html" class="mega-link">
+              Порядок работы
+              <svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+            <a href="geography.html" class="mega-link">
+              География присутствия
+              <svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+            <a href="certs.html" class="mega-link">
+              Лицензии и допуски
+              <svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+            <a href="contact.html" class="mega-link">
+              Контакты
+              <svg class="mega-link-arrow" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item"><a href="contact.html" class="nav-cta">Получить КП</a></li>
+  </ul>
+  <button class="nav-burger" id="burgerBtn"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="closeNav">✕</button>
+  <ul>
+    <li class="mob-acc">
+      <button class="mob-acc-toggle">Услуги<svg class="mob-chevron" viewBox="0 0 12 12" width="14" height="14"><polyline points="2,4 6,8 10,4"/></svg></button>
+      <ul class="mob-acc-panel">
+        <li><a href="services.html" onclick="closeMobileNav()">Все услуги</a></li>
+        <li><a href="service-design.html" onclick="closeMobileNav()">Проектный инжиниринг</a></li>
+        <li><a href="service-construction-engineering.html" onclick="closeMobileNav()">Строительный инжиниринг</a></li>
+        <li><a href="service-supply.html" onclick="closeMobileNav()">Комплектация объектов</a></li>
+        <li><a href="service-construction.html" onclick="closeMobileNav()">Строительные работы</a></li>
+        <li><a href="bim.html" onclick="closeMobileNav()">BIM-компетенции</a></li>
+        <li><a href="service-complex.html" onclick="closeMobileNav()">Комплексный инжиниринг</a></li>
+      </ul>
+    </li>
+    <li class="mob-acc">
+      <button class="mob-acc-toggle">Отрасли<svg class="mob-chevron" viewBox="0 0 12 12" width="14" height="14"><polyline points="2,4 6,8 10,4"/></svg></button>
+      <ul class="mob-acc-panel">
+        <li><a href="industries.html" onclick="closeMobileNav()">Все отрасли</a></li>
+        <li><a href="industry-warehouses.html" onclick="closeMobileNav()">Склады и логистика</a></li>
+        <li><a href="industry-apk.html" onclick="closeMobileNav()">АПК и пищевая промышленность</a></li>
+        <li><a href="industry-production.html" onclick="closeMobileNav()">Промышленное производство</a></li>
+        <li><a href="industry-commercial.html" onclick="closeMobileNav()">Коммерческая недвижимость</a></li>
+        <li><a href="industry-hotels.html" onclick="closeMobileNav()">Гостиницы и рекреация</a></li>
+        <li><a href="industry-residential.html" onclick="closeMobileNav()">Жилые объекты</a></li>
+      </ul>
+    </li>
+    <li><a href="projects.html" onclick="closeMobileNav()">Проекты</a></li>
+    <li><a href="blog.html" onclick="closeMobileNav()">Блог</a></li>
+    <li class="mob-acc">
+      <button class="mob-acc-toggle">О компании<svg class="mob-chevron" viewBox="0 0 12 12" width="14" height="14"><polyline points="2,4 6,8 10,4"/></svg></button>
+      <ul class="mob-acc-panel">
+        <li><a href="about.html" onclick="closeMobileNav()">О компании</a></li>
+        <li><a href="projects.html" onclick="closeMobileNav()">Портфолио проектов</a></li>
+        <li><a href="process.html" onclick="closeMobileNav()">Порядок работы</a></li>
+        <li><a href="geography.html" onclick="closeMobileNav()">География присутствия</a></li>
+        <li><a href="certs.html" onclick="closeMobileNav()">Лицензии и допуски</a></li>
+        <li><a href="contact.html" onclick="closeMobileNav()">Контакты</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html" onclick="closeMobileNav()" class="mob-cta">Получить КП</a></li>
+  </ul>
+</div>
+<!-- nav overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+<section id="page-hero">
+  <div class="ph-photo"></div>
+  <div class="ph-inner">
+    <div class="ph-breadcrumb"><a href="index.html">Главная</a><span>/</span>Проекты</div>
+    <h1 class="ph-title">Реализованные проекты</h1>
+    <p class="ph-desc">Капитальное строительство в России и СНГ — склады, производство, АПК, гостиницы, жильё.</p>
+    <div class="ph-stats">
+      <div><div class="ph-stat-val">100+</div><div class="ph-stat-label">объектов</div></div>
+      <div><div class="ph-stat-val">20+</div><div class="ph-stat-label">городов</div></div>
+      <div><div class="ph-stat-val">3</div><div class="ph-stat-label">страны</div></div>
+      <div><div class="ph-stat-val">8</div><div class="ph-stat-label">лет опыта</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+
+    <span class="fb-label">Фильтр</span>
+
+    <!-- Dropdown: Отрасль -->
+    <div class="dd-wrap" id="dd-market">
+      <button class="dd-trigger" id="dd-market-trigger"
+              aria-haspopup="listbox" aria-expanded="false">
+        <span class="dd-trigger-text" id="dd-market-label">Все отрасли</span>
+        <span class="dd-arrow" aria-hidden="true">
+          <svg viewBox="0 0 14 14"><polyline points="2,4 7,10 12,4"/></svg>
+        </span>
+      </button>
+      <div class="dd-menu" id="dd-market-menu" role="listbox">
+        <button class="dd-option selected" data-val="" role="option">
+          Все отрасли
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+        <button class="dd-option" data-val="warehouses" role="option">
+          Склады и логистика
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+        <button class="dd-option" data-val="apk" role="option">
+          АПК и хладокомбинаты
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+        <button class="dd-option" data-val="commercial" role="option">
+          Коммерческая недвижимость
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown: Решение -->
+    <div class="dd-wrap" id="dd-service">
+      <button class="dd-trigger" id="dd-service-trigger"
+              aria-haspopup="listbox" aria-expanded="false">
+        <span class="dd-trigger-text" id="dd-service-label">Все решения</span>
+        <span class="dd-arrow" aria-hidden="true">
+          <svg viewBox="0 0 14 14"><polyline points="2,4 7,10 12,4"/></svg>
+        </span>
+      </button>
+      <div class="dd-menu" id="dd-service-menu" role="listbox">
+        <button class="dd-option selected" data-val="" role="option">
+          Все решения
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+        <button class="dd-option" data-val="automation" role="option">
+          Роботизация и AGV
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+        <button class="dd-option" data-val="refrigeration" role="option">
+          Холодильные системы
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+        <button class="dd-option" data-val="packaging" role="option">
+          Упаковочные линии
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+        <button class="dd-option" data-val="engineering" role="option">
+          Проектирование и BIM
+          <svg class="dd-check" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <span class="search-icon">
+        <svg viewBox="0 0 16 16">
+          <circle cx="6.5" cy="6.5" r="4.5"/>
+          <line x1="10.5" y1="10.5" x2="14" y2="14"/>
+        </svg>
+      </span>
+      <input class="search-input" id="search-input"
+             type="text" placeholder="Объект или город…"
+             autocomplete="off" spellcheck="false">
+      <button class="search-clear" id="search-clear" aria-label="Очистить поиск">×</button>
+    </div>
+
+    <button class="fb-reset" id="fb-reset">Сбросить</button>
+
+  </div>
+</div>
+
+<div class="projects-list" id="projectsList">
+
+  <a class="project-item reveal" data-type="warehouse" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Новосибирск · Россия</span><span class="pi-tag">Склад</span><span class="pi-tag">EPCM</span></div>
+      <div class="pi-title">Сухой склад BIG BOX — логистический комплекс класса A</div>
+      <div class="pi-desc">BIM-модель LOD 350, 4D-планирование, полная комплектация металлоконструкций и строительный контроль от нулевого цикла до ввода.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">BIM LOD 350</span><span class="pi-deliv">Проект + Стройка</span><span class="pi-deliv">4D</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="warehouse-worker.jpg" alt="Склад BIG BOX Новосибирск" loading="lazy"></div>
+  </a>
+
+  <a class="project-item reveal" data-type="agro" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Барнаул · Россия</span><span class="pi-tag">АПК</span><span class="pi-tag">Под ключ</span></div>
+      <div class="pi-title">Птицеводческий комплекс — полный цикл</div>
+      <div class="pi-desc">Технологический дизайн, комплектация оборудования из нескольких стран, строительный контроль и пусконаладка. Срок — 14 месяцев.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">Технология</span><span class="pi-deliv">Импорт</span><span class="pi-deliv">ПНР</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="logistics-aerial.jpg" alt="Птицеводческий комплекс Барнаул" loading="lazy"></div>
+  </a>
+
+  <a class="project-item reveal" data-type="hotel" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Сочи · Россия</span><span class="pi-tag">Гостиница</span><span class="pi-tag">Рекреация</span></div>
+      <div class="pi-title">Курортный SPA-комплекс на черноморском побережье</div>
+      <div class="pi-desc">Концептуальный инжиниринг, MEP-проектирование термальных зон и авторский надзор курортного объекта.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">Концепция</span><span class="pi-deliv">MEP</span><span class="pi-deliv">Надзор</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="airport-glass.jpg" alt="SPA-комплекс Сочи" loading="lazy"></div>
+  </a>
+
+</div>
+
+<!-- INLINE CTA #1 -->
+<div class="inline-cta" data-inline-cta>
+  <div class="ic-inner">
+    <div>
+      <div class="ic-eyebrow">Есть похожий объект?</div>
+      <div class="ic-title">Оценим бюджет и предложим формат участия за 5 дней</div>
+      <div class="ic-bullets">
+        <span class="ic-bullet">NDA по запросу</span>
+        <span class="ic-bullet">Ответ за 1 день</span>
+        <span class="ic-bullet">KPI в договоре</span>
+      </div>
+    </div>
+    <div class="ic-actions">
+      <a href="contact.html" class="btn btn--primary">Обсудить проект <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:+73833750130" class="ic-phone">+7 (383) 375-01-30</a>
+    </div>
+  </div>
+</div>
+
+<div class="projects-list" id="projectsList2">
+
+  <a class="project-item reveal" data-type="production" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Кемерово · Россия</span><span class="pi-tag">Производство</span><span class="pi-tag">Пищепром</span></div>
+      <div class="pi-title">Мясоперерабатывающий завод — Scan-to-BIM</div>
+      <div class="pi-desc">Технологическая концепция, Scan-to-BIM существующих цехов, шеф-монтаж производственных линий, ПНР, MEP-проектирование.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">Scan-to-BIM</span><span class="pi-deliv">Технология</span><span class="pi-deliv">Шеф-монтаж</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="engineering-plans.jpg" alt="Завод Кемерово" loading="lazy"></div>
+  </a>
+
+  <a class="project-item reveal" data-type="residential" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Екатеринбург · Россия</span><span class="pi-tag">Жильё</span><span class="pi-tag">Проектирование</span></div>
+      <div class="pi-title">Жилой комплекс — архитектурное и конструктивное проектирование</div>
+      <div class="pi-desc">Архитектурные решения, конструктивное проектирование, BIM-координация инженерных систем, авторский надзор.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">АР</span><span class="pi-deliv">КР</span><span class="pi-deliv">BIM</span><span class="pi-deliv">Надзор</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="skyline.jpg" alt="ЖК Екатеринбург" loading="lazy"></div>
+  </a>
+
+  <a class="project-item reveal" data-type="warehouse" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Красноярск · Россия</span><span class="pi-tag">Склад</span><span class="pi-tag">Light Industrial</span></div>
+      <div class="pi-title">Мультиформатный Light Industrial парк</div>
+      <div class="pi-desc">ТЭО, рабочая документация, закупка металлоконструкций. Комплекс с независимыми блоками для малого производства и хранения.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">ТЭО</span><span class="pi-deliv">РД</span><span class="pi-deliv">Procurement</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="metro-infra.jpg" alt="Light Industrial Красноярск" loading="lazy"></div>
+  </a>
+
+</div>
+
+<!-- INLINE CTA #2 -->
+<div class="inline-cta" style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" data-inline-cta>
+  <div class="ic-inner">
+    <div>
+      <div class="ic-eyebrow" style="color:var(--accent-muted);">Технический аудит</div>
+      <div class="ic-title" style="color:var(--text);">Проверим документацию и выявим скрытые риски за 5 дней</div>
+    </div>
+    <div class="ic-actions">
+      <a href="contact.html" class="btn btn--primary">Получить КП →</a>
+      <a href="services.html" style="font-size:16px;color:var(--accent-muted);text-decoration:none;text-align:right;">Все услуги ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="projects-list" id="projectsList3">
+
+  <a class="project-item reveal" data-type="commercial" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Москва · Россия</span><span class="pi-tag">Коммерция</span><span class="pi-tag">BIM-аудит</span></div>
+      <div class="pi-title">Бизнес-центр — BIM-аудит и MEP Engineering</div>
+      <div class="pi-desc">Архитектурный аудит, рабочая документация, BIM-координация и MEP для офисного здания класса B+. Устранение 120+ коллизий.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">BIM-аудит</span><span class="pi-deliv">MEP</span><span class="pi-deliv">120+ коллизий</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="bim-screen.jpg" alt="Бизнес-центр Москва" loading="lazy"></div>
+  </a>
+
+  <a class="project-item reveal" data-type="agro" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Астана · Казахстан</span><span class="pi-tag">АПК</span><span class="pi-tag">Зерно</span></div>
+      <div class="pi-title">Завод глубокой переработки зерна</div>
+      <div class="pi-desc">Технологическая концепция, линии переработки, поставка и таможенная очистка оборудования, шеф-монтаж и ПНР. Трансграничная логистика.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">Технология</span><span class="pi-deliv">Таможня</span><span class="pi-deliv">ПНР</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="audit-charts.jpg" alt="Завод зерна Астана" loading="lazy"></div>
+  </a>
+
+  <a class="project-item reveal" data-type="hotel" href="contact.html">
+    <div class="pi-text"><div>
+      <div class="pi-tags"><span class="pi-tag geo">Горный Алтай · Россия</span><span class="pi-tag">Гостиница</span><span class="pi-tag">Ретрит</span></div>
+      <div class="pi-title">Велнес-ретрит и санаторный комплекс</div>
+      <div class="pi-desc">Концептуальное проектирование, ландшафтно-архитектурная концепция, термальная инфраструктура, системы климат-контроля.</div>
+    </div>
+    <div class="pi-bottom"><span class="pi-deliv">Концепция</span><span class="pi-deliv">Ландшафт</span><span class="pi-deliv">ИОС</span><div class="pi-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    <div class="pi-image"><img src="moscow-city.jpg" alt="Ретрит Горный Алтай" loading="lazy"></div>
+  </a>
+
+</div>
+
+<!-- GEO -->
+<section class="geo-section">
+  <div class="geo-inner reveal">
+    <span class="eyebrow">География присутствия</span>
+    <h2 style="font-size:clamp(24px,3vw,40px);font-weight:800;letter-spacing:-.01em;color:var(--text);line-height:1.06;margin-bottom:8px;">Реализуем проекты по всей России и СНГ</h2>
+    <p style="font-size:16px;font-weight:400;color:var(--text-2);">Технологические решения обеспечивают высокую мобильность в любом регионе</p>
+    <div class="cities-grid">
+      <div class="city-card"><div class="city-name">Новосибирск</div><div class="city-dots"><div class="c-dot" style="background:#E8A030"></div><div class="c-dot" style="background:#2C63AC"></div><div class="c-dot" style="background:#4a8a3a"></div></div></div>
+      <div class="city-card"><div class="city-name">Москва</div><div class="city-dots"><div class="c-dot" style="background:#E8A030"></div><div class="c-dot" style="background:#2C63AC"></div></div></div>
+      <div class="city-card"><div class="city-name">Санкт-Петербург</div><div class="city-dots"><div class="c-dot" style="background:#E8A030"></div><div class="c-dot" style="background:#2C63AC"></div></div></div>
+      <div class="city-card"><div class="city-name">Екатеринбург</div><div class="city-dots"><div class="c-dot" style="background:#2C63AC"></div><div class="c-dot" style="background:#8a4aa0"></div></div></div>
+      <div class="city-card"><div class="city-name">Красноярск</div><div class="city-dots"><div class="c-dot" style="background:#E8A030"></div><div class="c-dot" style="background:#2C63AC"></div></div></div>
+      <div class="city-card"><div class="city-name">Кемерово</div><div class="city-dots"><div class="c-dot" style="background:#E8A030"></div><div class="c-dot" style="background:#d4a020"></div></div></div>
+      <div class="city-card"><div class="city-name">Барнаул</div><div class="city-dots"><div class="c-dot" style="background:#d4a020"></div><div class="c-dot" style="background:#E8A030"></div></div></div>
+      <div class="city-card"><div class="city-name">Сочи</div><div class="city-dots"><div class="c-dot" style="background:#8a4aa0"></div></div></div>
+      <div class="city-card"><div class="city-name">Горный Алтай</div><div class="city-dots"><div class="c-dot" style="background:#8a4aa0"></div></div></div>
+      <div class="city-card"><div class="city-name">Астана</div><div class="city-dots"><div class="c-dot" style="background:#d4a020"></div><div class="c-dot" style="background:#2C63AC"></div></div></div>
+      <div class="city-card"><div class="city-name">Алматы</div><div class="city-dots"><div class="c-dot" style="background:#d4a020"></div></div></div>
+      <div class="city-card"><div class="city-name">Ташкент</div><div class="city-dots"><div class="c-dot" style="background:#d4a020"></div></div></div>
+    </div>
+    <div class="geo-legend">
+      <div class="geo-leg-item"><div class="c-dot" style="background:#E8A030;width:8px;height:8px;border-radius:50%;"></div>Склады</div>
+      <div class="geo-leg-item"><div class="c-dot" style="background:#2C63AC;width:8px;height:8px;border-radius:50%;"></div>Производство</div>
+      <div class="geo-leg-item"><div class="c-dot" style="background:#8a4aa0;width:8px;height:8px;border-radius:50%;"></div>Гостиницы</div>
+      <div class="geo-leg-item"><div class="c-dot" style="background:#d4a020;width:8px;height:8px;border-radius:50%;"></div>АПК</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE CTA -->
+<section class="page-cta">
+  <div class="pcta-inner">
+    <span class="eyebrow eyebrow--inv">Начать работу</span>
+    <h2 class="pcta-title">Готовы стать вашим<br>техническим партнёром</h2>
+    <p class="pcta-desc">За 5 рабочих дней оценим бюджет и предложим формат участия.</p>
+    <div class="pcta-form">
+      <input type="tel" class="pcta-input" placeholder="Телефон или e-mail">
+      <a href="contact.html" class="btn btn--primary">Обсудить проект</a>
+    </div>
+    <div class="pcta-note">NDA по запросу · Ответим за 1 рабочий день</div>
+  </div>
+</section>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky" id="mobileSticky">
+  <div class="ms-inner">
+    <a href="tel:+73833750130" class="ms-call">Позвонить</a>
+    <a href="contact.html" class="ms-audit">Получить КП →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <svg class="footer-logo-svg" viewBox="0 0 35765.84 7919.08" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="shape-rendering:geometricPrecision;fill-rule:evenodd;clip-rule:evenodd">
+        <path d="M8262.87 1105.82l2200.33 0 650.51 -848.51 -2850.84 0c-1447.68,0 -2506.34,842.11 -2506.34,2092.38 0.01,1243.79 1058.65,2174.85 2506.34,2174.85l2200.33 -0.03 650.51 -842.1 -2289.6 0c-1141.6,0 -2066.29,-286.98 -2066.29,-1288.05 0,-842.12 739.74,-1288.5 1505.05,-1288.54z"/>
+        <path d="M2905.66 1105.93l2200.26 0 650.51 -848.52 -2850.77 0c-1447.75,0 -2506.4,842.11 -2506.4,2092.38 0,1243.79 1058.65,2174.86 2506.37,2174.86l2200.29 -0.04 650.51 -842.1 -2289.58 0c-983.85,0 -1806.05,-213.5 -2014.62,-913.39l2377.2 -0.03 650.51 -848.09 -2989.33 0c219.32,-534.92 808.93,-815.04 1415.05,-815.07z"/>
+        <polygon points="18184.16,257.31 17182.92,257.31 17182.92,4524.51 20958.56,4524.51 21615.44,3682.41 18184.16,3682.41"/>
+        <polygon points="27624.9,257.31 26968.03,1105.82 29098.07,1105.82 29098.07,4524.51 30105.91,4524.51 30105.91,1105.82 31866.02,1105.82 32522.89,257.31"/>
+        <path d="M16641.2 257.31l-1071.73 0 -1275.16 1663.23 -1631.27 -0.08c0,-153.27 0,-385.38 0,-540.48l0 -1122.67 -1007.59 0 0 4267.2 1007.59 0 0 -1294.95c0,-182.03 0.01,-284.58 0.01,-460.5l1716.41 0 1198.68 1755.45 1071.74 0 -1563.83 -2239.3 1555.15 -2027.9z"/>
+        <path d="M24121.51 1105.82l2200.46 0 650.43 -848.51 -2850.89 0c-1447.77,0 -2506.34,842.11 -2506.34,2092.38 0.03,1243.79 1058.56,2174.85 2506.34,2174.85l2200.46 -0.03 650.43 -842.1 -2289.39 0c-984.22,0 -1806.08,-213.51 -2014.87,-913.39l2377.02 -0.04 650.87 -848.09 -2989.65 0c219.54,-534.92 808.95,-815.03 1415.13,-815.07z"/>
+        <polygon points="30308.36,5403.11 33615.57,1105.81 35365.11,1105.81 32057.9,5403.11 32057.9,5403.11"/>
+        <polygon points="26809.28,7676.4 28558.82,5403.11 30308.36,5403.11 28558.82,7676.4"/>
+        <path d="M11137.01 7649.87l0 -1547.72 917.59 0 0 331.65 -563.82 0 0 271.96 497.49 0 0 331.64 -497.49 0 0 280.82 585.94 0 0 331.65 -939.71 0zm2620.09 0l-283 0 -734.06 -928.63 0 928.63 -331.67 0 0 -1547.72 283.02 0 734.06 933.05 0 -933.05 331.65 0 0 1547.72zm1034.79 -550.55l0 -331.65 661.09 0 0 689.85c-66.33,66.33 -154.39,119.39 -264.21,159.19 -109.83,39.8 -214.85,59.69 -315.07,59.69 -260.91,0 -464.33,-72.22 -610.26,-216.67 -145.92,-144.45 -218.88,-339.03 -218.88,-583.72 0,-228.48 71.48,-418.99 214.47,-571.56 142.98,-152.55 333.13,-228.85 570.44,-228.85 201.93,0 370.73,53.82 506.33,161.42l-148.14 285.23c-30.96,-32.43 -76.27,-59.7 -135.99,-81.81 -59.69,-22.12 -119.76,-33.17 -180.2,-33.17 -134.12,0 -242.84,39.8 -326.11,119.39 -83.29,79.6 -124.94,196.06 -124.94,349.35 0,142.99 41.65,256.84 124.94,341.6 83.27,84.75 194.2,127.14 332.75,127.14 44.23,0 91.03,-8.48 140.4,-25.42 49.39,-16.97 83.65,-34.27 102.82,-51.98l0 -168.03 -329.44 0zm992.76 550.55l0 -1547.72 353.77 0 0 1547.72 -353.77 0zm2122.59 0l-283 0 -734.06 -928.63 0 928.63 -331.67 0 0 -1547.72 283.03 0 734.06 933.05 0 -933.05 331.64 0 0 1547.72zm398 0l0 -1547.72 917.59 0 0 331.65 -563.82 0 0 271.96 497.49 0 0 331.64 -497.49 0 0 280.82 585.94 0 0 331.65 -939.71 0zm1271.36 0l0 -1547.72 917.59 0 0 331.65 -563.83 0 0 271.96 497.5 0 0 331.64 -497.5 0 0 280.82 585.94 0 0 331.65 -939.7 0zm1625.12 0l-353.77 0 0 -1547.72c32.42,0 125.3,-0.74 278.59,-2.23 153.3,-1.46 235.85,-2.2 247.64,-2.2 200.47,0 346.02,44.23 436.68,132.66 90.65,88.45 135.98,209.31 135.98,362.61 0,210.8 -86.96,359.68 -260.9,446.64l451.05 610.24 -428.94 0 -375.88 -541.7 -130.45 0 0 541.7zm154.77 -1220.48c-5.89,0 -57.48,1.46 -154.77,4.41l0 342.72 128.25 0c160.67,0 240.99,-59.72 240.99,-179.1 0,-112.03 -71.48,-168.03 -214.47,-168.03zm1001.61 1220.48l0 -1547.72 353.76 0 0 1547.72 -353.76 0zm2122.59 0l-283 0 -734.06 -928.63 0 928.63 -331.67 0 0 -1547.72 283.02 0 734.06 933.05 0 -933.05 331.65 0 0 1547.72zm1034.79 -550.55l0 -331.65 661.09 0 0 689.85c-66.33,66.33 -154.39,119.39 -264.22,159.19 -109.82,39.8 -214.85,59.69 -315.06,59.69 -260.91,0 -464.33,-72.22 -610.26,-216.67 -145.92,-144.45 -218.88,-339.03 -218.88,-583.72 0,-228.48 71.48,-418.99 214.46,-571.56 142.99,-152.55 333.14,-228.85 570.44,-228.85 201.94,0 370.73,53.82 506.34,161.42l-148.14 285.23c-30.96,-32.43 -76.27,-59.7 -135.99,-81.81 -59.69,-22.12 -119.76,-33.17 -180.2,-33.17 -134.12,0 -242.84,39.8 -326.11,119.39 -83.3,79.6 -124.94,196.06 -124.94,349.35 0,142.99 41.64,256.84 124.94,341.6 83.27,84.75 194.19,127.14 332.75,127.14 44.23,0 91.03,-8.48 140.4,-25.42 49.38,-16.97 83.65,-34.27 102.82,-51.98l0 -168.03 -329.44 0z"/>
+      </svg>
+      <p>Комплексный проектно-строительный инжиниринг объектов капитального строительства на всех этапах: от идеи до ввода в эксплуатацию.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Услуги</h4>
+      <ul>
+        <li><a href="service-design.html">Проектирование</a></li>
+        <li><a href="service-supply.html">Комплектация</a></li>
+        <li><a href="service-construction.html">Строительство</a></li>
+        <li><a href="bim.html">BIM-инжиниринг</a></li>
+        <li><a href="service-design.html">Аудит проекта</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Компания</h4>
+      <ul>
+        <li><a href="projects.html">Портфолио</a></li>
+        <li><a href="process.html">Как мы работаем</a></li>
+        <li><a href="about.html">О компании</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Отрасли</h4>
+      <ul>
+        <li><a href="industry-warehouses.html">Склады и логистика</a></li>
+        <li><a href="industry-apk.html">АПК и пищепром</a></li>
+        <li><a href="industry-production.html">Промышленное производство</a></li>
+        <li><a href="projects.html">Все проекты</a></li>
+        <li><a href="industry-commercial.html">Коммерческая недвижимость</a></li>
+        <li><a href="industry-hotels.html">Гостиницы и рекреация</a></li>
+        <li><a href="industry-residential.html">Жилые объекты</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакты</h4>
+      <div class="footer-contact-item"><div class="footer-contact-label">Телефон</div><a href="tel:+73833750130" class="footer-contact-val">+7 (383) 375-01-30</a></div>
+      <div class="footer-contact-item"><div class="footer-contact-label">Email</div><a href="mailto:een@ecklet.ru" class="footer-contact-val">een@ecklet.ru</a></div>
+      <div class="footer-contact-item"><div class="footer-contact-label">Telegram</div><a href="https://t.me/eckletengineering" class="footer-contact-val">@eckletengineering</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Эклет Инжиниринг. Все права защищены.</span>
+    <span class="footer-cities">Новосибирск · Москва · Санкт-Петербург · Екатеринбург · Сочи · Астана · Ташкент</span>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="schema.js"></script>
+</body>
+</html>
+  {
+    id: 'p01',
+    title: 'Сухой склад BIG BOX — логистический комплекс класса A',
+    type: 'warehouse', location: 'Новосибирск', country: 'Россия',
+    tags: ['Склад', 'EPCM'],
+    desc: 'BIM LOD 350, 4D-планирование, полная комплектация и строительный контроль. Сдан на 3 недели раньше срока.',
+    specs: ['18 500 м²', 'Сдан за 11 мес.', 'BIM LOD 350'],
+    result: '–30% переделок благодаря Clash Detection',
+    image: 'warehouse-worker.jpg',
+    market: 'warehouses', service: 'engineering',
+  },
+  {
+    id: 'p02',
+    title: 'Птицеводческий комплекс — полный цикл',
+    type: 'agro', location: 'Барнаул', country: 'Россия',
+    tags: ['АПК', 'Под ключ'],
+    desc: 'Технологический дизайн, комплектация из 3 стран, строительный контроль и ПНР. Мощность 12 000 т/год.',
+    specs: ['12 000 т/год', '14 мес.', 'Под ключ'],
+    result: '0 замечаний при сдаче Госкомиссии',
+    image: 'logistics-aerial.jpg',
+    market: 'apk', service: 'automation',
+  },
+  {
+    id: 'p03',
+    title: 'Курортный SPA-комплекс — черноморское побережье',
+    type: 'hotel', location: 'Сочи', country: 'Россия',
+    tags: ['Гостиница', 'Рекреация'],
+    desc: 'Концептуальный инжиниринг, MEP термальных зон, авторский надзор. Открытие в плановые сроки сезона.',
+    specs: ['4 800 м²', 'MEP + надзор', '8 мес.'],
+    result: 'Открыт к курортному сезону без задержек',
+    image: 'airport-glass.jpg',
+    market: 'commercial', service: 'engineering',
+  },
+  {
+    id: 'p04',
+    title: 'Мясоперерабатывающий завод — Scan-to-BIM',
+    type: 'production', location: 'Кемерово', country: 'Россия',
+    tags: ['Производство', 'Пищепром'],
+    desc: 'Scan-to-BIM существующих цехов за 3 нед., шеф-монтаж производственных линий, ПНР, MEP-проектирование.',
+    specs: ['LOD 350', 'Точность ±3 мм', '3 нед. сканирование'],
+    result: 'Реконструкция без единого незапланированного выезда',
+    image: 'engineering-plans.jpg',
+    market: 'apk', service: 'engineering',
+  },
+  {
+    id: 'p05',
+    title: 'Жилой комплекс — архитектурное и конструктивное проектирование',
+    type: 'residential', location: 'Екатеринбург', country: 'Россия',
+    tags: ['Жильё', 'Проектирование'],
+    desc: 'Стадии П и Р, BIM-координация 5 разделов, авторский надзор. Положительное заключение экспертизы с 1-й подачи.',
+    specs: ['22 000 м²', '5 разделов BIM', 'Экспертиза с 1-й подачи'],
+    result: '+2 мес. сэкономлено на согласованиях',
+    image: 'skyline.jpg',
+    market: 'commercial', service: 'engineering',
+  },
+  {
+    id: 'p06',
+    title: 'Мультиформатный Light Industrial парк',
+    type: 'warehouse', location: 'Красноярск', country: 'Россия',
+    tags: ['Склад', 'Light Industrial'],
+    desc: 'ТЭО, рабочая документация, закупка металлоконструкций. Комплекс с независимыми блоками для малого производства.',
+    specs: ['32 000 м²', '8 блоков', 'CAPEX –18%'],
+    result: 'CAPEX снижен на 18% против первоначальной оценки',
+    image: 'metro-infra.jpg',
+    market: 'warehouses', service: 'engineering',
+  },
+  {
+    id: 'p07',
+    title: 'Бизнес-центр — BIM-аудит и MEP Engineering',
+    type: 'commercial', location: 'Москва', country: 'Россия',
+    tags: ['Коммерция', 'BIM-аудит'],
+    desc: 'BIM-аудит действующего проекта, рабочая документация, MEP для офисного здания класса B+. Устранено 120+ коллизий.',
+    specs: ['15 200 м²', '120+ коллизий', '6 нед. аудит'],
+    result: '120 коллизий устранено до начала монтажа',
+    image: 'bim-screen.jpg',
+    market: 'commercial', service: 'engineering',
+  },
+  {
+    id: 'p08',
+    title: 'Завод глубокой переработки зерна',
+    type: 'agro', location: 'Астана', country: 'Казахстан',
+    tags: ['АПК', 'Зерно'],
+    desc: 'Технологическая концепция, поставка и таможня оборудования из 4 стран, шеф-монтаж и ПНР. Трансграничная логистика.',
+    specs: ['500 т/сутки', '4 страны поставки', 'ПНР 6 нед.'],
+    result: 'Таможня и поставка без задержек из 4 стран',
+    image: 'audit-charts.jpg',
+    market: 'apk', service: 'automation',
+  },
+  {
+    id: 'p09',
+    title: 'Велнес-ретрит и санаторный комплекс',
+    type: 'hotel', location: 'Горный Алтай', country: 'Россия',
+    tags: ['Гостиница', 'Ретрит'],
+    desc: 'Концептуальное проектирование, ландшафт, термальная инфраструктура, климат-контроль. Объект в сложном рельефе.',
+    specs: ['6 200 м²', 'Термальная зона', 'Сложный рельеф'],
+    result: 'Вписан в рельеф без единой сваи-переноса',
+    image: 'moscow-city.jpg',
+    market: 'commercial', service: 'refrigeration',
+  },
+];
+
+/* ── STATE ─────────────────────────────────────── */
+const filterState = { market: '', service: '', query: '' };
+
+/* ── DEBOUNCE ──────────────────────────────────── */
+function debounce(fn, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+/* ── CARD BUILDER ──────────────────────────────── */
+const ARROW = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+
+function buildCard(p, index) {
+  const delay = Math.min(index * 55, 330); // stagger cap at 330ms
+  const extraTags = p.tags.map(t => `<span class="pi-tag">${t}</span>`).join('');
+  const delivs    = p.specs.map(s => `<span class="pi-deliv">${s}</span>`).join('');
+  return `
+<a class="project-item animate-in"
+   style="animation-delay:${delay}ms"
+   data-type="${p.type}"
+   data-market="${p.market}"
+   data-service="${p.service}"
+   href="contact.html">
+  <div class="pi-text">
+    <div>
+      <div class="pi-tags">
+        <span class="pi-tag geo">${p.location} · ${p.country}</span>
+        ${extraTags}
+      </div>
+      <div class="pi-title">${p.title}</div>
+      <div class="pi-desc">${p.desc}</div>
+    </div>
+    <div class="pi-bottom">
+      ${delivs}
+      <div class="pi-arrow">${ARROW}</div>
+    </div>
+  </div>
+  <div class="pi-image">
+    <img src="${p.image}" alt="${p.title}" loading="lazy">
+  </div>
+</a>`;
+}
+
+function buildEmpty() {
+  return `
+<div class="pi-empty">
+  <div class="pi-empty-icon">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <circle cx="11" cy="11" r="8"/>
+      <path d="m21 21-4.35-4.35"/>
+      <path d="M8 11h6" opacity=".35"/>
+    </svg>
+  </div>
+  <div class="pi-empty-title">По вашим критериям объектов не найдено</div>
+  <div class="pi-empty-sub">Попробуйте изменить фильтры или сбросить поиск</div>
+  <button class="pi-empty-reset" onclick="resetAllFilters()">Сбросить фильтры</button>
+</div>`;
+}
+
+/* ── FILTER & RENDER ───────────────────────────── */
+function applyFilters() {
+  const { market, service, query } = filterState;
+  const q = query.toLowerCase();
+
+  const results = projectsData.filter(p => {
+    const okMarket  = !market  || p.market  === market;
+    const okService = !service || p.service === service;
+    const okQuery   = !q
+      || p.title.toLowerCase().includes(q)
+      || p.location.toLowerCase().includes(q)
+      || p.country.toLowerCase().includes(q);
+    return okMarket && okService && okQuery;
+  });
+
+  const container = document.getElementById('projectsList');
+  container.innerHTML = results.length
+    ? results.map((p, i) => buildCard(p, i)).join('')
+    : buildEmpty();
+
+  // Reset button visibility
+  const resetBtn = document.getElementById('fb-reset');
+  if (resetBtn) {
+    resetBtn.classList.toggle('visible', !!(market || service || query));
+  }
+
+  // Shareable URL
+  try {
+    const params = new URLSearchParams();
+    if (market)  params.set('market', market);
+    if (service) params.set('service', service);
+    if (query)   params.set('q', query);
+    const url = params.toString() ? `${location.pathname}?${params}` : location.pathname;
+    history.replaceState(null, '', url);
+  } catch (_) {}
+}
+
+/* ── DROPDOWNS ─────────────────────────────────── */
+function openDropdown(trigger, menu) {
+  menu.classList.add('open');
+  trigger.classList.add('open');
+  trigger.setAttribute('aria-expanded', 'true');
+}
+
+function closeAllDropdowns() {
+  document.querySelectorAll('.dd-menu.open').forEach(m => m.classList.remove('open'));
+  document.querySelectorAll('.dd-trigger.open').forEach(t => {
+    t.classList.remove('open');
+    t.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function setupDropdown(triggerId, menuId, labelId, stateKey) {
+  const trigger = document.getElementById(triggerId);
+  const menu    = document.getElementById(menuId);
+  const label   = document.getElementById(labelId);
+  if (!trigger || !menu || !label) return;
+
+  trigger.addEventListener('click', e => {
+    e.stopPropagation();
+    const wasOpen = menu.classList.contains('open');
+    closeAllDropdowns();
+    if (!wasOpen) openDropdown(trigger, menu);
+  });
+
+  menu.querySelectorAll('.dd-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      menu.querySelectorAll('.dd-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+
+      const val = opt.dataset.val;
+      filterState[stateKey] = val;
+      // strip SVG text from label
+      label.textContent = opt.childNodes[0].textContent.trim();
+      trigger.classList.toggle('active-filter', val !== '');
+
+      closeAllDropdowns();
+      applyFilters();
+    });
+  });
+}
+
+// Click outside closes dropdowns
+document.addEventListener('click', closeAllDropdowns);
+// Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeAllDropdowns();
+});
+
+/* ── SEARCH WITH DEBOUNCE (250 ms) ─────────────── */
+function setupSearch() {
+  const input = document.getElementById('search-input');
+  const clear = document.getElementById('search-clear');
+  if (!input) return;
+
+  const onInput = debounce(() => {
+    filterState.query = input.value.trim();
+    applyFilters();
+  }, 250);
+
+  input.addEventListener('input', onInput);
+
+  if (clear) {
+    clear.addEventListener('click', () => {
+      input.value = '';
+      filterState.query = '';
+      applyFilters();
+      input.focus();
+    });
+  }
+}
+
+/* ── GLOBAL RESET ──────────────────────────────── */
+function resetAllFilters() {
+  filterState.market  = '';
+  filterState.service = '';
+  filterState.query   = '';
+
+  [
+    ['dd-market-label',  'Все отрасли',  'dd-market-menu'],
+    ['dd-service-label', 'Все решения',  'dd-service-menu'],
+  ].forEach(([lId, def, mId]) => {
+    const lbl  = document.getElementById(lId);
+    const menu = document.getElementById(mId);
+    if (lbl)  lbl.textContent = def;
+    if (menu) menu.querySelectorAll('.dd-option')
+                  .forEach(o => o.classList.toggle('selected', o.dataset.val === ''));
+  });
+
+  document.querySelectorAll('.dd-trigger').forEach(t => t.classList.remove('active-filter'));
+
+  const input = document.getElementById('search-input');
+  if (input) input.value = '';
+
+  applyFilters();
+}
+
+/* ── READ URL PARAMS ───────────────────────────── */
+function readUrlParams() {
+  try {
+    const p = new URLSearchParams(location.search);
+    if (p.get('market'))  filterState.market  = p.get('market');
+    if (p.get('service')) filterState.service = p.get('service');
+    if (p.get('q'))       filterState.query   = p.get('q');
+  } catch (_) {}
+}
+
+/* ── INIT ──────────────────────────────────────── */
+function initContainer() {
+  // Hide secondary static lists + inline CTAs (now rendered from JS)
+  ['projectsList2', 'projectsList3'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+  document.querySelectorAll('[data-inline-cta]').forEach(el => {
+    el.style.display = 'none';
+  });
+}
+
+/* ── NAVBAR ────────────────────────────────────── */
+const navbar = document.getElementById('navbar');
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+}
+
+/* ── MOBILE STICKY ─────────────────────────────── */
+const stickyBar = document.getElementById('mobileSticky');
+if (stickyBar) {
+  window.addEventListener('scroll', () => {
+    stickyBar.classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+}
+
+/* ── MOBILE NAV ────────────────────────────────── */
+const burgerBtn = document.getElementById('burgerBtn');
+const closeNavBtn = document.getElementById('closeNav');
+const mobileNavEl = document.getElementById('mobileNav');
+if (burgerBtn) {
+  burgerBtn.addEventListener('click', () => {
+    mobileNavEl.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+}
+function closeMobileNav() {
+  if (mobileNavEl) mobileNavEl.classList.remove('open');
+  document.body.style.overflow = '';
+}
+if (closeNavBtn) closeNavBtn.addEventListener('click', closeMobileNav);
+
+/* ── BOOTSTRAP ─────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  initContainer();
+  readUrlParams();
+  setupDropdown('dd-market-trigger',  'dd-market-menu',  'dd-market-label',  'market');
+  setupDropdown('dd-service-trigger', 'dd-service-menu', 'dd-service-label', 'service');
+  setupSearch();
+  applyFilters();
+});
+</script>
+<script>
+// ── MEGA-NAV ──────────────────────────────────────────────────────────────
+(function(){
+  const ITEMS = [
+    {itemId:'ni-services', btnId:'nt-services'},
+    {itemId:'ni-industries', btnId:'nt-industries'},
+    {itemId:'ni-about',    btnId:'nt-about'},
+  ];
+  const overlay = document.getElementById('navOverlay');
+
+  function openMega(itemId, btnId) {
+    ITEMS.forEach(({itemId:id, btnId:bid}) => {
+      if (id !== itemId) {
+        document.getElementById(id)?.classList.remove('open');
+        const b = document.getElementById(bid);
+        if (b) b.setAttribute('aria-expanded','false');
+      }
+    });
+    const item = document.getElementById(itemId);
+    const btn  = document.getElementById(btnId);
+    item?.classList.add('open');
+    if (btn) btn.setAttribute('aria-expanded','true');
+    if (overlay) overlay.classList.add('visible');
+  }
+
+  function closeAll() {
+    ITEMS.forEach(({itemId, btnId}) => {
+      document.getElementById(itemId)?.classList.remove('open');
+      const b = document.getElementById(btnId);
+      if (b) b.setAttribute('aria-expanded','false');
+    });
+    if (overlay) overlay.classList.remove('visible');
+  }
+
+  ITEMS.forEach(({itemId, btnId}) => {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const item = document.getElementById(itemId);
+      const isOpen = item?.classList.contains('open');
+      if (isOpen) closeAll();
+      else openMega(itemId, btnId);
+    });
+  });
+
+  // Click outside
+  document.addEventListener('click', closeAll);
+  // Escape
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeAll(); });
+  // Overlay click
+  if (overlay) overlay.addEventListener('click', closeAll);
+  // Prevent close when clicking inside mega panel
+  document.querySelectorAll('.nav-mega').forEach(m => {
+    m.addEventListener('click', e => e.stopPropagation());
+  });
+})();
+</script>
+<script>
+
+/* ═══════════════════════════════════════════════════════════
+   Ecklet Engineering — Telegram Form Handler
+   Заменить значения:
+     TELEGRAM_BOT_TOKEN → токен от @BotFather
+     TELEGRAM_CHAT_ID   → chat id куда слать заявки
+   ═══════════════════════════════════════════════════════════ */
+
+const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN';
+const TELEGRAM_CHAT_ID   = 'YOUR_CHAT_ID';
+
+async function sendToTelegram(data) {
+  const lines = [];
+  lines.push('📋 *Новая заявка с сайта Эклет Инжиниринг*');
+  lines.push('━━━━━━━━━━━━━━━━━━━━━━━━');
+  for (const [key, val] of Object.entries(data)) {
+    if (!val || key === 'bot-field' || key === 'form-name') continue;
+    const label = {
+      name:    '👤 Имя',
+      phone:   '📞 Телефон',
+      email:   '📧 Email',
+      message: '💬 Сообщение',
+      service: '🔧 Услуга',
+      industry:'🏭 Отрасль',
+      object:  '🏗 Объект',
+    }[key] || key;
+    lines.push(`${label}: ${val}`);
+  }
+  lines.push('━━━━━━━━━━━━━━━━━━━━━━━━');
+  lines.push(`🌐 Источник: ${window.location.href}`);
+  lines.push(`⏰ ${new Date().toLocaleString('ru-RU', {timeZone:'Asia/Novosibirsk'})}`);
+
+  const text = lines.join('\n');
+
+  // РЕЖИМ ИМИТАЦИИ — если токен не задан
+  if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN') {
+    console.log('[TG MOCK] Отправка в Telegram:\n', text);
+    await new Promise(r => setTimeout(r, 800)); // имитация задержки сети
+    return { ok: true, mock: true };
+  }
+
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id:    TELEGRAM_CHAT_ID,
+      text:       text,
+      parse_mode: 'Markdown',
+    }),
+  });
+  return response.json();
+}
+
+/* ── Универсальный обработчик форм ── */
+async function handleEckletForm(e, formEl) {
+  e.preventDefault();
+  const btn = formEl.querySelector('[type=submit]');
+  const successEl = formEl.closest('section')?.querySelector('.form-success');
+
+  // Состояние загрузки
+  if (btn) {
+    btn.disabled = true;
+    btn.dataset.origText = btn.textContent;
+    btn.textContent = 'Отправляем…';
+  }
+
+  // Собираем данные
+  const data = {};
+  new FormData(formEl).forEach((val, key) => { data[key] = val.trim(); });
+
+  try {
+    const result = await sendToTelegram(data);
+    if (result.ok) {
+      // Успех
+      formEl.style.display = 'none';
+      if (successEl) {
+        successEl.style.display = 'flex';
+      } else {
+        // Fallback inline
+        const msg = document.createElement('div');
+        msg.className = 'form-success-inline';
+        msg.innerHTML = `
+          <div class="fsi-icon">✓</div>
+          <div class="fsi-title">Заявка принята${result.mock ? ' (тест)' : ''}</div>
+          <div class="fsi-text">Свяжемся с вами в течение 1 рабочего дня.</div>`;
+        formEl.parentNode.insertBefore(msg, formEl.nextSibling);
+      }
+    } else {
+      throw new Error(result.description || 'Ошибка API');
+    }
+  } catch (err) {
+    console.error('[TG]', err);
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = btn.dataset.origText;
+    }
+    // Показываем ошибку
+    const errEl = formEl.querySelector('.form-error') || (() => {
+      const el = document.createElement('p');
+      el.className = 'form-error';
+      el.style.cssText = 'color:#e53e3e;font-size:14px;margin-top:8px;';
+      formEl.appendChild(el);
+      return el;
+    })();
+    errEl.textContent = 'Не удалось отправить. Позвоните нам: +7 (383) 375-01-30';
+  }
+}
+
+/* ── CSS для inline success ── */
+(function injectFormCSS() {
+  const s = document.createElement('style');
+  s.textContent = `
+    .form-success-inline{
+      display:flex;flex-direction:column;align-items:center;
+      text-align:center;padding:32px 24px;
+      background:var(--surface,#F4F7FA);
+      border:1px solid rgba(13,28,46,.08);
+      border-radius:2px;margin-top:8px;
+    }
+    .fsi-icon{
+      width:48px;height:48px;border-radius:50%;
+      background:var(--accent,#0F2741);color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-size:22px;margin-bottom:12px;
+    }
+    .fsi-title{font-size:18px;font-weight:700;color:var(--accent,#0F2741);margin-bottom:6px;}
+    .fsi-text{font-size:15px;color:rgba(13,28,46,.6);line-height:1.55;}
+    .form-success{
+      display:none;flex-direction:column;align-items:center;
+      text-align:center;padding:32px 24px;
+    }
+  `;
+  document.head.appendChild(s);
+})();
+
+</script>
+  <script src="schema.js"></script>
+  <script>
+  (function(){
+    var map={
+      'services.html':'ni-services','service-complex.html':'ni-services',
+      'service-design.html':'ni-services','service-supply.html':'ni-services',
+      'service-construction.html':'ni-services',
+      'service-construction-engineering.html':'ni-services','bim.html':'ni-services',
+      'industry-apk.html':'ni-industries','industry-commercial.html':'ni-industries',
+      'industry-hotels.html':'ni-industries','industry-production.html':'ni-industries',
+      'industry-residential.html':'ni-industries','industry-warehouses.html':'ni-industries',
+      'industries.html':'ni-industries',
+      'projects.html':'ni-projects',
+      'blog.html':'ni-blog','blog-bim-for-client.html':'ni-blog',
+      'blog-capex-warehouse.html':'ni-blog','blog-expertise.html':'ni-blog',
+      'blog-industrial-floors.html':'ni-blog','blog-scan-to-bim.html':'ni-blog',
+      'process.html':'ni-about','about.html':'ni-about',
+      'geography.html':'ni-about','certs.html':'ni-about'
+    };
+    var page=window.location.pathname.split('/').pop()||'index.html';
+    var navId=map[page];
+    if(!navId)return;
+    var li=document.getElementById(navId);
+    if(!li)return;
+    var trigger=li.querySelector('a, button');
+    if(trigger)trigger.classList.add('nav-active');
+  })();
+  </script>
+</body>
+</html>
