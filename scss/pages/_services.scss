@@ -1,0 +1,147 @@
+// services.html — unique page styles
+
+/* PAGE HERO */
+#page-hero{position:relative;min-height:60vh;display:flex;align-items:flex-end;overflow:hidden;}
+.ph-photo{position:absolute;inset:0;background:url('metro-infra.webp') center/cover no-repeat;}
+.ph-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,28,46,.88) 0%,rgba(13,28,46,.4) 70%,rgba(13,28,46,.2) 100%);}
+.ph-inner{position:relative;z-index:2;width:100%;padding:0 clamp(20px,5vw,80px) clamp(48px,6vw,80px);max-width:1280px;margin:0 auto;}
+.ph-breadcrumb{font-size:16px;color:rgba(255,255,255,.4);margin-bottom:16px;letter-spacing:.06em;}
+.ph-breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none;}
+.ph-breadcrumb span{margin:0 8px;}
+.ph-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.025em;color:#fff;line-height:1.06;}
+.ph-desc{font-size:clamp(1rem,1.1vw,1.125rem);font-weight:400;color:rgba(255,255,255,.7);max-width:560px;line-height:1.55;opacity:0;animation:fadeUp .8s .38s forwards;}
+
+/* STICKY SUBNAV */
+.subnav{position:sticky;top:68px;z-index:200;background:var(--white);border-bottom:1px solid var(--border);}
+.subnav-inner{max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,80px);display:flex;overflow-x:auto;scrollbar-width:none;}
+.subnav-inner::-webkit-scrollbar{display:none;}
+.snav-btn{background:none;border:none;border-bottom:2px solid transparent;color:var(--text-2);font-family:'Circe',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;padding:18px 20px;cursor:pointer;white-space:nowrap;transition:all .2s;text-transform:uppercase;}
+.snav-btn:hover{color:var(--text);}
+.snav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+
+/* SERVICE SECTIONS */
+.svc-section{padding:clamp(64px,8vw,110px) clamp(20px,5vw,80px);}
+.svc-mt{
+  display: flex;
+  flex-direction: column;
+}
+.svc-section{
+  a {
+    margin-top: auto;
+  }
+}
+.svc-section--grey{background:var(--surface-2);}
+.svc-section--white{background:var(--white);}
+.svc-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,88px);align-items:stretch;max-width:1200px;margin:0 auto;}
+.svc-layout--rev{direction:rtl;}.svc-layout--rev > *{direction:ltr;}
+.svc-right{
+  display: flex;
+  align-items: flex-end;
+}
+
+.svc-photo-wrap{position:relative;overflow:hidden;}
+.svc-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.svc-text{display:flex;flex-direction:column;height:100%;}
+.svc-text .btn{margin-top:auto;padding-top:32px;align-self:flex-start;}
+.svc-features{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:32px;}
+.svc-feature{background:var(--white);padding:20px 22px;}
+.svc-section--grey .svc-feature{background:var(--surface-2);}
+.svc-section--white .svc-feature{background:var(--white);}
+.sf-name{font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.sf-desc{font-size:16px;font-weight:400;color:var(--text-2);line-height:1.45;}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:28px;}
+.svc-list li{font-size:16px;font-weight:400;color:var(--text-2);padding-left:20px;position:relative;line-height:1.5;}
+.svc-list li::before{content:'–';position:absolute;left:0;color:var(--accent-muted);}
+
+/* MICRO-CTA */
+.micro-cta{background:#E8EDF5;border:none;padding:28px clamp(20px,5vw,80px);}
+.micro-cta--dark{background:var(--dark);border-color:rgba(255,255,255,.08);}
+.mc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.mc-text{font-size:16px;font-weight:400;color:var(--text-2);}
+.mc-text strong{color:var(--text);font-weight:700;}
+.micro-cta--dark .mc-text{color:rgba(255,255,255,.6);}
+.micro-cta--dark .mc-text strong{color:#fff;}
+
+/* BIM RESULTS */
+.bim-section{padding:clamp(72px,9vw,120px) clamp(20px,5vw,80px);background:var(--dark);}
+.bim-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,100px);}
+.bim-inner{
+  a {
+    margin-top: auto;
+  }
+}
+.bim-benefits{margin-top:36px;display:flex;flex-direction:column;gap:28px;}
+.benefit-row{display:flex;gap:24px;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07);}
+/* .benefit-row:last-child{border-bottom:none;padding-bottom:0;} */
+.benefit-num{font-size:clamp(28px,2.8vw,42px);font-weight:800;color:rgba(40,104,176,.9);min-width:100px;line-height:1;flex-shrink:0;}
+.benefit-label strong{display:block;font-size:clamp(1rem,1.5vw,1.5rem);font-weight:700;color:#fff;margin-bottom:4px;}
+.benefit-label span{font-size:16px;font-weight:400;color:rgba(255,255,255,.55);line-height:1.5;}
+.bim-photo-col{position:relative;}
+.bim-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.bim-caption{background:var(--accent);padding:18px 22px;}
+.bim-caption-title{font-size:18px;font-weight:700;color:#fff;margin-bottom:3px;}
+.bim-caption-sub{font-size:16px;font-weight:400;color:rgba(255,255,255,.65);}
+
+/* SPECIALIZATIONS */
+.spec-section{padding:clamp(72px,9vw,120px) clamp(20px,5vw,80px);background:var(--surface-2);}
+.spec-section{
+  a {
+    width: 33%;
+    margin-top: 40px;
+  }
+}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:48px;}
+.spec-card{background:var(--white);padding:clamp(24px,3vw,36px);}
+.spec-card-title{font-size:clamp(1rem,1.5vw,1.5rem);font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.spec-items{display:flex;flex-direction:column;gap:8px;}
+.spec-item{font-size:16px;font-weight:400;color:var(--text-2);padding-left:14px;position:relative;}
+.spec-item::before{content:'·';position:absolute;left:0;color:var(--accent-muted);font-size:16px;line-height:1;}
+
+/* AUDIT */
+.audit-section{padding:clamp(72px,9vw,120px) clamp(20px,5vw,80px);background:var(--white);}
+.audit-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,88px);}
+.audit-steps{display:flex;flex-direction:column;gap:0;}
+.audit-step{display:flex;gap:24px;padding:24px 0;border-bottom:1px solid var(--border);}
+.audit-step:last-child{border-bottom:none;}
+.as-num{font-size:16px;font-weight:700;letter-spacing:.1em;color:var(--accent-muted);flex-shrink:0;min-width:28px;margin-top:3px;}
+.as-title{font-size:24px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.as-desc{font-size:16px;font-weight:400;color:var(--text-2);line-height:1.55;}
+.audit-cta-box{background:var(--dark);padding:clamp(32px,4vw,48px);align-self:start;position:sticky;top:90px;}
+.audit-cta-box--light{
+  background: var(--surface);
+  
+  .acb-eyebrow,
+  .acb-title,
+  .acb-desc{
+    color: var(--text);
+  }
+
+  
+}
+.acb-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px;}
+.acb-title{font-size:clamp(22px,2.5vw,32px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:12px;}
+.acb-desc{font-size:16px;font-weight:400;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:28px;}
+
+/* PAGE CTA */
+.page-cta{padding:clamp(72px,9vw,120px) clamp(20px,5vw,80px);background:var(--dark);text-align:center;}
+.pcta-inner{max-width:640px;margin:0 auto;}
+.pcta-title{font-size:clamp(1.625rem,3.5vw,3rem);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.06;margin-bottom:16px;}
+.pcta-desc{font-size:clamp(1rem,1.1vw,1.125rem);font-weight:400;color:rgba(255,255,255,.65);line-height:1.55;margin-bottom:36px;}
+.pcta-form{display:flex;gap:10px;max-width:420px;margin:0 auto 12px;}
+.pcta-input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:2px;padding:14px 16px;color:#fff;font-family:'Circe',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+.pcta-input:focus{border-color:rgba(255,255,255,.5);}
+.pcta-input::placeholder{color:rgba(255,255,255,.35);}
+.pcta-note{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);}
+
+@media(max-width:1024px){
+  .svc-layout{grid-template-columns:1fr;}
+  .bim-inner{grid-template-columns:1fr;}
+  .audit-inner{grid-template-columns:1fr;}
+  .audit-cta-box{position:static;}
+  .spec-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .mc-inner{flex-direction:column;align-items:flex-start;}
+  .spec-grid{grid-template-columns:1fr;}
+  .pcta-form{flex-direction:column;}
+}

@@ -1,0 +1,9 @@
+@font-face{font-family:'Circe';src:url('fonts/Circe-Thin.woff2') format('woff2');font-weight:100;font-display:swap;}
+@font-face{font-family:'Circe';src:url('fonts/Circe-Light.woff2') format('woff2');font-weight:300;font-display:swap;}
+@font-face{font-family:'Circe';src:url('fonts/Circe-Regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'Circe';src:url('fonts/Circe-Bold.woff2') format('woff2');font-weight:700;font-display:swap;}
+@font-face{font-family:'Circe';src:url('fonts/Circe-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap;}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Circe',sans-serif;color:var(--text);background:var(--surface);overflow-x:hidden;line-height:1.6;}

@@ -1,0 +1,29 @@
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;border-radius:2px;font-family:'Circe',sans-serif;font-size:16px;font-weight:700;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn--primary{background:var(--accent);color:#fff;}
+.btn--primary:hover{background:var(--accent-hov);transform:translateY(-1px);box-shadow:0 8px 24px rgba(15,39,65,.35);}
+.btn--outline-inv{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);}
+.btn--outline-inv:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+.btn--outline{background:transparent;color:var(--accent);border:1.5px solid var(--accent);}
+.btn--outline:hover{background:var(--accent);color:#fff;}
+.btn-inv{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:rgba(255,255,255,.15);color:#fff;font-family:'Circe',sans-serif;font-size:16px;font-weight:700;letter-spacing:.04em;text-decoration:none;border:1px solid rgba(255,255,255,.35);transition:background .2s,border-color .2s;}
+.btn-inv:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.6);}
+.btn-white{display:inline-flex;align-items:center;gap:8px;padding:15px 36px;background:#fff;color:var(--accent);font-family:inherit;font-size:16px;font-weight:700;border:none;border-radius:2px;cursor:pointer;text-decoration:none;transition:background .2s,transform .2s;}
+.btn-white:hover{background:var(--surface);transform:translateY(-1px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 36px;background:rgba(255,255,255,.12);color:#fff;font-family:inherit;font-size:16px;font-weight:700;border:1px solid rgba(255,255,255,.3);border-radius:2px;text-decoration:none;transition:background .2s;}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-submit{width:100%;padding:16px;border:none;border-radius:2px;background:var(--accent);color:#fff;font-family:'Circe',sans-serif;font-size:16px;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:background .2s;}
+.btn-submit:hover{background:var(--accent-hov);}
+
+.btn--text{background:transparent;color:var(--text);padding:0;font-size:16px;font-weight:700;letter-spacing:.04em;gap:8px;border:none;position:relative;}
+.btn--text::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--text);transform:scaleX(0);transform-origin:left;transition:transform .2s;}
+.btn--text:hover::after{transform:scaleX(1);}
+.btn--text:hover{color:var(--accent-hov);transform:none;box-shadow:none;}
+.btn--text svg{stroke:var(--text);transition:transform .2s;}
+.btn--text:hover svg{transform:translateX(4px);}
+.btn--text-inv{background:transparent;color:#fff;padding:0;font-size:16px;font-weight:700;letter-spacing:.04em;gap:8px;border:none;position:relative;}
+.btn--text-inv::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:rgba(255,255,255,.5);transform:scaleX(0);transform-origin:left;transition:transform .2s;}
+.btn--text-inv:hover::after{transform:scaleX(1);}
+.btn--text-inv:hover{color:rgba(255,255,255,.8);transform:none;box-shadow:none;}
+.btn--text-inv svg{stroke:#fff;transition:transform .2s;}
+.btn--text-inv:hover svg{transform:translateX(4px);}
